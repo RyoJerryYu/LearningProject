@@ -24,9 +24,15 @@
     <ClCompile Include="MyVector\expland.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
+    <ClCompile Include="VectorFunctions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

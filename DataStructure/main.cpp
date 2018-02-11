@@ -1,4 +1,6 @@
 #include<iostream>
+#include"main.h"
+
 using namespace std;
 int main() {
 	int n;//由于作用域，n的声明不能放在循环内
@@ -10,7 +12,7 @@ int main() {
 		cin >> n;
 		switch (n) {
 		case 1:
-			cout << "Program1 is running." << endl;
+			VectorFunctions();
 			break;
 		default:
 			cout << "Program end." << endl;

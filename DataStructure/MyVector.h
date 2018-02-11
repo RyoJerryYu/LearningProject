@@ -1,6 +1,7 @@
 #ifndef MY_VECTOR
 #define MY_VECTOR
 
+#include<iostream>
 typedef int Rank;
 #define DEFAULT_CAPACITY 3
 
@@ -17,12 +18,25 @@ protected:
 public:
 	/*构造函数*/;
 	MyVector() :_size(0), _capacity(DEFAULT_CAPACITY) {
-		_elem = new T*[_capacity];
+		_elem = new T[_capacity];
 	}
+
 	MyVector(int size):_size(size) {
-		_capacity 2 * _size;
-		_elem = new T*[_capacity];
+		_capacity = 2 * _size;
+		_elem = new T[_capacity];
 	}
+
+	
+	MyVector(const T str[],Rank lo,Rank hi) {
+		_size = hi - lo;
+		_capacity = 2 * _size;
+		_elem = new T[_capacity];
+		int i;
+		for (i = 0; i < hi; i++) {
+			_elem[i] = str[i + lo];
+		}
+	}
+	
 	//MyVector(MyVector);
 	
 	/*析构函数*/;
@@ -50,7 +64,11 @@ public:
 
 	/*重载操作符*/
 	
-	T& operator[](Rank r=_size) const {
+	T& operator[](Rank r) const {
+		if (r < 0 || r >= _size) {
+			cout << "向量下标超出范围" << endl;
+			exit(0);
+		}
 		return _elem[r];
 	}
 }
