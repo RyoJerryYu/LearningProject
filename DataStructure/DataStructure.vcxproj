@@ -117,10 +117,12 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyVector\expland.cpp" />
+    <ClCompile Include="MyVector\insert.cpp" />
+    <ClCompile Include="MyVector\MyVector.cpp" />
+    <ClCompile Include="MyVector\SizeGetPut.cpp" />
     <ClCompile Include="VectorFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="main.h" />
     <ClInclude Include="MyVector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

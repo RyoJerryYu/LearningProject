@@ -1,5 +1,5 @@
 #include<iostream>
-#include"main.h"
+#include"MyVector.h"
 
 using namespace std;
 int main() {
@@ -10,6 +10,7 @@ int main() {
 		cout << "1:Programs of vector" << endl;
 		cout << "If you input 0 or others, this program will be ended." << endl;
 		cin >> n;
+		cout << endl;
 		switch (n) {
 		case 1:
 			VectorFunctions();
@@ -18,5 +19,6 @@ int main() {
 			cout << "Program end." << endl;
 			n = 0;
 		}
+		cout << "\n" << endl;
 	} while (n);
 }
