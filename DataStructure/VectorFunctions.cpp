@@ -35,5 +35,7 @@ int VectorFunctions() {
 	cout << Vector6 << endl;
 	cout << Vector4.remove(3, 6) << endl;
 	cout << Vector4 << endl;
+	cout << Vector4.find(14) << endl;
+	cout << Vector4.find(15) << endl;
 	return 1;
 }

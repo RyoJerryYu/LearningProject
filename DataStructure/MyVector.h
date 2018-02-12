@@ -27,16 +27,14 @@ public:
 	MyVector(const T*, Rank, Rank);
 	MyVector(const MyVector<T>& A);
 	
-	
 	/*析构函数*/;
 	~MyVector();
-	
 	
 	/*只读接口*/;
 	int size() const;
 	T& get(Rank);
 	int disordered();
-	//Rank find(T);
+	Rank find(const T &);
 	//Rank search(T);
 
 	/*可写接口*/;
@@ -68,5 +66,6 @@ int VectorFunctions();
 #include "MyVector\disordered.cpp"
 #include "MyVector\sorts.cpp"
 #include "MyVector\remove.cpp"
+#include "MyVector\find_deduplicate.cpp"
 
 #endif //MY_VECTOR_H

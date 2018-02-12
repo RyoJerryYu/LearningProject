@@ -48,6 +48,9 @@
     <ClCompile Include="MyVector\remove.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
+    <ClCompile Include="MyVector\find_deduplicate.cpp">
+      <Filter>源文件\MyVector</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector.h">
