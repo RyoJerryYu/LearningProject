@@ -33,6 +33,7 @@ public:
 	/*Ö»¶Á½Ó¿Ú*/;
 	int size() const;
 	T& get(Rank);
+	//int disordered();
 	//Rank find(T);
 	//Rank search(T);
 
@@ -41,7 +42,6 @@ public:
 	T insert(Rank, T);
 	T insert(Rank, int, T);
 	//T remove(Rank);
-	//int disordered();
 	//void sort();
 	//void deduplicate();
 	//void uniquify();
