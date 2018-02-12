@@ -35,8 +35,11 @@ public:
 	T& get(Rank);
 	int disordered();
 	Rank find(const T &);//用于实现find(T,Rank=0,Rank=_size)，只能用静态成员作默认参数，模板类成员函数不能外部定义默认参数
-	Rank find(const T &, Rank, Rank hi);
-	//Rank search(T);
+	Rank find(const T &, Rank, Rank);
+
+	Rank search(const T &);
+	Rank search(const T &, Rank, Rank);
+	Rank binsearch(const T &, Rank, Rank);
 
 	/*可写接口*/;
 	T put(Rank, T);
@@ -44,13 +47,15 @@ public:
 	T insert(Rank, int, const T &);
 	T remove(Rank);
 	int remove(Rank, Rank);
-	void sort();
-	void bubblesort();
 	void deduplicate();
 	void uniquify();
 
+	void sort();
+	void bubblesort();
+
 	/*遍历接口*/;
-	//T traverse();
+	//template <typename VST>
+	//void traverse(VST& visit);
 
 	/*重载操作符*/
 	T& operator[](Rank)const;
@@ -76,5 +81,6 @@ int VectorFunctions();
 #include "MyVector\remove.cpp"
 #include "MyVector\find_deduplicate.cpp"
 #include "MyVector\uniquify.cpp"
+#include "MyVector\searches.cpp"
 
 #endif //MY_VECTOR_H

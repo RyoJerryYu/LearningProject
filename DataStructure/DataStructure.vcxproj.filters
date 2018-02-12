@@ -54,6 +54,12 @@
     <ClCompile Include="MyVector\uniquify.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
+    <ClCompile Include="MyVector\searches.cpp">
+      <Filter>源文件\MyVector</Filter>
+    </ClCompile>
+    <ClCompile Include="MyVector\traverse.cpp">
+      <Filter>源文件\MyVector</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector.h">
