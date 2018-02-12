@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <iostream>
 
-template<typename T>
+template <typename T>
 void MyVector<T>::sort() {
 	int n = rand() % 2;
 	switch (1) {
@@ -18,7 +18,7 @@ void MyVector<T>::sort() {
 	}
 }
 
-template<typename T>
+template <typename T>
 void MyVector<T>::bubblesort() {
 	if (_size < 2)return;
 	int i = 0, j = _size - 1, unsorted = _size;
@@ -29,6 +29,11 @@ void MyVector<T>::bubblesort() {
 		}
 		j = unsorted;
 	}
+}
+
+template <typename T>
+void MyVector<T>::mergesort() {
+	;
 }
 
 #endif //SORTS_CPP

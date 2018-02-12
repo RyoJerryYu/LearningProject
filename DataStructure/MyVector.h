@@ -52,10 +52,10 @@ public:
 
 	void sort();
 	void bubblesort();
+	void mergesort();
 
 	/*遍历接口*/;
-	//template <typename VST>
-	//void traverse(VST& visit);
+	//void traverse(VST &);
 
 	/*重载操作符*/
 	T& operator[](Rank)const;
@@ -82,5 +82,6 @@ int VectorFunctions();
 #include "MyVector\find_deduplicate.cpp"
 #include "MyVector\uniquify.cpp"
 #include "MyVector\searches.cpp"
+#include "MyVector\traverse.cpp"
 
 #endif //MY_VECTOR_H
