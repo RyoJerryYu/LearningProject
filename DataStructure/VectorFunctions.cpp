@@ -27,8 +27,7 @@ int VectorFunctions() {
 	Vector2 = Vector4;//不会调用模板构造函数,先定义operator=();
 	Vector2.display();
 	MyVector<int> Vector6(Vector4);
-	Vector6.display();
-	cout << Vector1 << Vector2 << Vector3 << Vector4 << endl;
+	cout << Vector1 << Vector2 << Vector4 << Vector6 << endl;
 	
 	return 1;
 }
