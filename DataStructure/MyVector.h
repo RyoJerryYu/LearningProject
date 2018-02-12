@@ -47,7 +47,7 @@ public:
 	void sort();
 	void bubblesort();
 	void deduplicate();
-	//void uniquify();
+	void uniquify();
 
 	/*±éÀú½Ó¿Ú*/;
 	//T traverse();
@@ -75,5 +75,6 @@ int VectorFunctions();
 #include "MyVector\sorts.cpp"
 #include "MyVector\remove.cpp"
 #include "MyVector\find_deduplicate.cpp"
+#include "MyVector\uniquify.cpp"
 
 #endif //MY_VECTOR_H

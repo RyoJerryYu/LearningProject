@@ -46,6 +46,10 @@ int VectorFunctions() {
 	int* t;
 	t = Vector4;
 	cout << t[0] << t[1] << endl;
+	cout << Vector1 << Vector2 << Vector3 << Vector4 << Vector5 << Vector6 << endl;
+	Vector6.sort();
+	Vector6.uniquify();
+	cout << Vector6 << endl;
 
 	return 1;
 }

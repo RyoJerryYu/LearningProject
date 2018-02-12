@@ -24,6 +24,7 @@ void MyVector<T>::deduplicate() {
 	while (i < _size) {
 		(find(_elem[i], 0, i) == -1) ? i++ : remove(i);
 	}
+	shrink();
 }
 
 #endif //FIND_DEDUPLICATE_CPP

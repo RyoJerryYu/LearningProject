@@ -125,6 +125,7 @@
     <ClCompile Include="MyVector\remove.cpp" />
     <ClCompile Include="MyVector\size_get_put.cpp" />
     <ClCompile Include="MyVector\sorts.cpp" />
+    <ClCompile Include="MyVector\uniquify.cpp" />
     <ClCompile Include="VectorFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>

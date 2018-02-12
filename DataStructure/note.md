@@ -1,5 +1,5 @@
 # 未完成  
-*  构造search(),uniquify()  
+*  构造search()  
 
 # 已完成  
 *  构造~MyVector与MyVector函数并测试  
@@ -16,7 +16,7 @@
 *  构造shrink()  
 *  构造find()，deduplicate()  
 *  构造operator>,<,>=,<=,==,!=,T*  
-
+*  构造uniquify()  
 
 
 
