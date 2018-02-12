@@ -30,10 +30,13 @@
     <ClCompile Include="MyVector\MyVector.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
-    <ClCompile Include="MyVector\SizeGetPut.cpp">
+    <ClCompile Include="MyVector\insert.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
-    <ClCompile Include="MyVector\insert.cpp">
+    <ClCompile Include="MyVector\operator.cpp">
+      <Filter>源文件\MyVector</Filter>
+    </ClCompile>
+    <ClCompile Include="MyVector\size_get_put.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
   </ItemGroup>

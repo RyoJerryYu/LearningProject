@@ -119,7 +119,8 @@
     <ClCompile Include="MyVector\expland.cpp" />
     <ClCompile Include="MyVector\insert.cpp" />
     <ClCompile Include="MyVector\MyVector.cpp" />
-    <ClCompile Include="MyVector\SizeGetPut.cpp" />
+    <ClCompile Include="MyVector\operator.cpp" />
+    <ClCompile Include="MyVector\size_get_put.cpp" />
     <ClCompile Include="VectorFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>

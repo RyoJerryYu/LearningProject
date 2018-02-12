@@ -1,5 +1,5 @@
-#ifndef SIZEANDGET_CPP
-#define SIZEANDGET_CPP
+#ifndef SIZEGETPUT_CPP
+#define SIZEGETPUT_CPP
 
 #include "..\MyVector.h"
 #include<iostream>
@@ -22,4 +22,4 @@ T MyVector<T>::put(Rank r, T t) {
 	return _elem[r] = t;
 }
 
-#endif //SIZEANDGET_CPP
+#endif //SIZEGETPUT_CPP

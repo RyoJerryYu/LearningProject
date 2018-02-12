@@ -2,6 +2,7 @@
 #define MY_VECTOR
 
 #include <iostream>
+using namespace std;
 
 typedef int Rank;
 #define DEFAULT_CAPACITY 3
@@ -49,13 +50,9 @@ public:
 	//T traverse();
 
 	/*重载操作符*/
-	T& operator[](Rank r) const {
-		if (r < 0 || r >= _size) {
-			cout << "向量下标超出范围" << endl;
-			exit(0);
-		}
-		return _elem[r];
-	}
+	T& operator[](Rank)const;
+	MyVector<T>& operator=(MyVector<T>);
+	template <typename T> friend ostream & operator<<(ostream &, const MyVector<T>&);//使用ostream类前先用std命名空间,友元函数模板声明时先说明模板
 
 
 	/*测试用显示函数*/
@@ -71,7 +68,8 @@ public:
 int VectorFunctions();
 #include "MyVector\MyVector.cpp" //模板类不支持直接多文件结构！
 #include "MyVector\expland.cpp"
-#include "MyVector\SizeGetPut.cpp"
+#include "MyVector\size_get_put.cpp"
 #include "MyVector\insert.cpp"
+#include "MyVector\operator.cpp"
 
 #endif //MY_VECTOR
