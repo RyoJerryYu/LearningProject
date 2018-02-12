@@ -33,7 +33,7 @@ public:
 	/*Ö»¶Á½Ó¿Ú*/;
 	int size() const;
 	T& get(Rank);
-	//int disordered();
+	int disordered();
 	//Rank find(T);
 	//Rank search(T);
 
@@ -71,5 +71,6 @@ int VectorFunctions();
 #include "MyVector\size_get_put.cpp"
 #include "MyVector\insert.cpp"
 #include "MyVector\operator.cpp"
+#include "MyVector\disordered_sort.cpp"
 
 #endif //MY_VECTOR

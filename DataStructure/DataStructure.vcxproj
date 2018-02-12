@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyVector\disordered_sort.cpp" />
     <ClCompile Include="MyVector\expland.cpp" />
     <ClCompile Include="MyVector\insert.cpp" />
     <ClCompile Include="MyVector\MyVector.cpp" />

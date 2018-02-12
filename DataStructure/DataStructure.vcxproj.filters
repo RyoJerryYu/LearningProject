@@ -39,6 +39,9 @@
     <ClCompile Include="MyVector\size_get_put.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
+    <ClCompile Include="MyVector\disordered_sort.cpp">
+      <Filter>源文件\MyVector</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector.h">
