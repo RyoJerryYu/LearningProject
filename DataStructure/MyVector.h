@@ -35,6 +35,7 @@ public:
 	T& get(Rank);
 	int disordered();
 	Rank find(const T &);
+	Rank find(const T &, Rank, Rank hi);
 	//Rank search(T);
 
 	/*可写接口*/;
@@ -45,7 +46,7 @@ public:
 	int remove(Rank, Rank);
 	void sort();
 	void bubblesort();
-	//void deduplicate();
+	void deduplicate();
 	//void uniquify();
 
 	/*遍历接口*/;

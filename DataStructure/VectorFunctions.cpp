@@ -37,5 +37,8 @@ int VectorFunctions() {
 	cout << Vector4 << endl;
 	cout << Vector4.find(14) << endl;
 	cout << Vector4.find(15) << endl;
+	Vector4.deduplicate();
+	cout << Vector4 << endl;
+
 	return 1;
 }
