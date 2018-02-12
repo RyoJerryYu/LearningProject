@@ -121,6 +121,7 @@
     <ClCompile Include="MyVector\insert.cpp" />
     <ClCompile Include="MyVector\MyVector.cpp" />
     <ClCompile Include="MyVector\operator.cpp" />
+    <ClCompile Include="MyVector\remove.cpp" />
     <ClCompile Include="MyVector\size_get_put.cpp" />
     <ClCompile Include="MyVector\sorts.cpp" />
     <ClCompile Include="VectorFunctions.cpp" />

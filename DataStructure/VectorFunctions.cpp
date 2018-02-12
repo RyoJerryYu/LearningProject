@@ -31,6 +31,9 @@ int VectorFunctions() {
 	cout << Vector3.disordered() << endl;
 	Vector2.sort();
 	cout << Vector2 << endl;
-
+	cout << Vector6.remove(4) << endl;
+	cout << Vector6 << endl;
+	cout << Vector4.remove(3, 6) << endl;
+	cout << Vector4 << endl;
 	return 1;
 }

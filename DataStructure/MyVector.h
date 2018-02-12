@@ -40,9 +40,10 @@ public:
 
 	/*可写接口*/;
 	T put(Rank, T);
-	T insert(Rank, T);
-	T insert(Rank, int, T);
-	//T remove(Rank);
+	T insert(Rank, const T &);
+	T insert(Rank, int, const T &);
+	T remove(Rank);
+	int remove(Rank, Rank);
 	void sort();
 	void bubblesort();
 	//void deduplicate();
@@ -55,16 +56,6 @@ public:
 	T& operator[](Rank)const;
 	MyVector<T>& operator=(MyVector<T>);
 	template <typename T> friend ostream & operator<<(ostream &, const MyVector<T>&);//使用ostream类前先用std命名空间,友元函数模板声明时先说明模板
-
-
-	/*测试用显示函数*/
-	void display() const {
-		int i;
-		for (i = 0; i < _size; i++) {
-			cout << "this[" << i << "] =" << _elem[i] << ",";
-		}
-		cout << endl;
-	}
 };
 
 int VectorFunctions();
@@ -75,5 +66,6 @@ int VectorFunctions();
 #include "MyVector\operator.cpp"
 #include "MyVector\disordered.cpp"
 #include "MyVector\sorts.cpp"
+#include "MyVector\remove.cpp"
 
 #endif //MY_VECTOR_H
