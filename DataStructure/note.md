@@ -43,6 +43,7 @@
 		else { lo = mi + 1; }
 	}
 	return lo - 1;
+		
 	if语句中必不能为_elem[i]<t（或对应地，t<=_elem[i]），否则t=_elem[i]时进入i左方搜索不能返回秩最大者
 	如果使用：  
 	
