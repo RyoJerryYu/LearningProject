@@ -34,7 +34,7 @@ public:
 	int size() const;
 	T& get(Rank);
 	int disordered();
-	Rank find(const T &);
+	Rank find(const T &);//用于实现find(T,Rank=0,Rank=_size)，只能用静态成员作默认参数，模板类成员函数不能外部定义默认参数
 	Rank find(const T &, Rank, Rank hi);
 	//Rank search(T);
 
@@ -55,6 +55,13 @@ public:
 	/*重载操作符*/
 	T& operator[](Rank)const;
 	MyVector<T>& operator=(MyVector<T>);
+	bool operator<(const MyVector<T> &);
+	bool operator>(const MyVector<T> &);
+	bool operator<=(const MyVector<T> &);
+	bool operator>=(const MyVector<T> &);
+	bool operator==(const MyVector<T> &);
+	bool operator!=(const MyVector<T> &);
+	operator T*();
 	template <typename T> friend ostream & operator<<(ostream &, const MyVector<T>&);//使用ostream类前先用std命名空间,友元函数模板声明时先说明模板
 };
 

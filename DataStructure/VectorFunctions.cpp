@@ -39,6 +39,13 @@ int VectorFunctions() {
 	cout << Vector4.find(15) << endl;
 	Vector4.deduplicate();
 	cout << Vector4 << endl;
+	cout << (Vector4 < Vector2&&Vector3>Vector4) << endl;
+	Vector2 = Vector4;
+	cout << (Vector2 == Vector4) << (Vector3 != Vector4) << endl;
+	cout << (Vector4 <= Vector2 && Vector4 >= Vector2) << endl;
+	int* t;
+	t = Vector4;
+	cout << t[0] << t[1] << endl;
 
 	return 1;
 }
