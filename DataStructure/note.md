@@ -47,10 +47,10 @@
 	if语句中必不能为_elem[i]<t（或对应地，t<=_elem[i]），否则t=_elem[i]时进入i左方搜索不能返回秩最大者
 	如果使用：  
 	
-	while (lo < hi-1) {  
-		Rank mi = (lo + hi) / 2;  
-		if (t < _elem[mi]) { hi = mi; }  
-		else { lo = mi; }  
-	}  
-	return lo;  
+		while (lo < hi-1) {  
+			Rank mi = (lo + hi) / 2;  
+			if (t < _elem[mi]) { hi = mi; }  
+			else { lo = mi; }  
+		}  
+		return lo;  
 	则当t足够小时，只能返回lo，不能返回-1（t<_elem[lo]，也不合语义）
