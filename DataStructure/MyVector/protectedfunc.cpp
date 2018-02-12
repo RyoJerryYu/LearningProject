@@ -1,5 +1,5 @@
-#ifndef EXPLAND_CPP
-#define EXPLAND_CPP
+#ifndef PROTECTEDFUNC_CPP
+#define PROTECTEDFUNC_CPP
 
 #include "..\MyVector.h"
 
@@ -16,4 +16,12 @@ void MyVector<T>::expand() {
 	delete[] oldelem;
 }
 
-#endif // EXPLAND_CPP
+template <typename T>
+void MyVector<T>::swap(Rank i, Rank j) {
+	if (i < 0 || j < 0 || _size <= i || _size <= j)return;
+	T t = _elem[i];
+	_elem[i] = _elem[j];
+	_elem[j] = t;
+}
+
+#endif // PROTECTEDFUNC_CPP

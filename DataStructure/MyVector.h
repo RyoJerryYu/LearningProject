@@ -1,5 +1,5 @@
-#ifndef MY_VECTOR
-#define MY_VECTOR
+#ifndef MY_VECTOR_H
+#define MY_VECTOR_H
 
 #include <iostream>
 using namespace std;
@@ -16,6 +16,7 @@ private:
 protected:
 	/*内部函数*/;
 	void expand();
+	void swap(Rank, Rank);
 
 public:
 	/*构造函数*/;
@@ -42,7 +43,8 @@ public:
 	T insert(Rank, T);
 	T insert(Rank, int, T);
 	//T remove(Rank);
-	//void sort();
+	void sort();
+	void bubblesort();
 	//void deduplicate();
 	//void uniquify();
 
@@ -67,10 +69,11 @@ public:
 
 int VectorFunctions();
 #include "MyVector\MyVector.cpp" //模板类不支持直接多文件结构！
-#include "MyVector\expland.cpp"
+#include "MyVector\protectedfunc.cpp"
 #include "MyVector\size_get_put.cpp"
 #include "MyVector\insert.cpp"
 #include "MyVector\operator.cpp"
-#include "MyVector\disordered_sort.cpp"
+#include "MyVector\disordered.cpp"
+#include "MyVector\sorts.cpp"
 
-#endif //MY_VECTOR
+#endif //MY_VECTOR_H

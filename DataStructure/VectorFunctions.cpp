@@ -29,6 +29,8 @@ int VectorFunctions() {
 	MyVector<int> Vector6(Vector4);
 	cout << Vector1 << Vector2 << Vector3 << Vector4 << Vector5 << Vector6 << endl;
 	cout << Vector3.disordered() << endl;
+	Vector2.sort();
+	cout << Vector2 << endl;
 
 	return 1;
 }

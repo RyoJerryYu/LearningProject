@@ -21,9 +21,6 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="MyVector\expland.cpp">
-      <Filter>源文件\MyVector</Filter>
-    </ClCompile>
     <ClCompile Include="VectorFunctions.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -39,7 +36,13 @@
     <ClCompile Include="MyVector\size_get_put.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
-    <ClCompile Include="MyVector\disordered_sort.cpp">
+    <ClCompile Include="MyVector\sorts.cpp">
+      <Filter>源文件\MyVector</Filter>
+    </ClCompile>
+    <ClCompile Include="MyVector\disordered.cpp">
+      <Filter>源文件\MyVector</Filter>
+    </ClCompile>
+    <ClCompile Include="MyVector\protectedfunc.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
   </ItemGroup>

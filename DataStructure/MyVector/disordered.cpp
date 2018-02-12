@@ -1,5 +1,5 @@
-#ifndef DISORDERED_SORT_CPP
-#define DISORDERED_SORT_CPP
+#ifndef DISORDERED_CPP
+#define DISORDERED_CPP
 
 #include "..\MyVector.h"
 
@@ -12,4 +12,4 @@ int MyVector<T>::disordered() {
 	return disordered;
 }
 
-#endif //DISORDERED_SORT_CPP
+#endif //DISORDERED_CPP

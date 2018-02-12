@@ -1,5 +1,5 @@
 # 未完成  
-. 构造sort函数  
+. 构造remove函数  
 
 # 已完成  
 . 构造~MyVector与MyVector函数并测试  
@@ -9,7 +9,8 @@
 . 构造insert函数  
 . 重载运算符=、<<  
 . 构造disordered函数  
-
+. 构造sort函数  
+. 构造bubblesort函数
 
 
 
