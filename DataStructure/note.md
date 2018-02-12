@@ -2,6 +2,7 @@
 *  构造find()，deduplicate()  
 
 
+
 # 已完成  
 *  构造~MyVector与MyVector函数并测试  
 *  MyVector类中重载[]运算符测试  
@@ -14,6 +15,7 @@
 *  构造bubblesort函数  
 *  构造remove函数  
 *  重新构造insert与remove  
+*  构造shrink()  
 
 
 

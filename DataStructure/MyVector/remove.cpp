@@ -20,6 +20,7 @@ int MyVector<T>::remove(Rank lo, Rank hi) {
 	for (int i = lo; i < _size; i++) {
 		_elem[i] = _elem[i + length];
 	}
+	shrink();
 	return length;
 }
 

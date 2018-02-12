@@ -9,8 +9,7 @@ void MyVector<T>::expand() {
 	T* oldelem = _elem;
 	_capacity = _size * 2;
 	_elem = new T[_capacity];
-	int i;
-	for (i = 0; i < _size; i++) {
+	for (int i = 0; i < _size; i++) {
 		_elem[i] = oldelem[i];
 	}
 	delete[] oldelem;
@@ -22,6 +21,18 @@ void MyVector<T>::swap(Rank i, Rank j) {
 	T t = _elem[i];
 	_elem[i] = _elem[j];
 	_elem[j] = t;
+}
+
+template <typename T>
+bool MyVector<T>::shrink() {
+	if (_capacity < 2 * _size)return false;
+	T* oldelem = _elem;
+	_capacity = _size;
+	_elem = new T[_capacity];
+	for (int i = 0; i < _size; i++) {
+		_elem[i] = oldelem[i];
+	}
+	delete[] oldelem; return true;
 }
 
 #endif // PROTECTEDFUNC_CPP

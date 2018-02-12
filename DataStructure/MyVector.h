@@ -17,6 +17,7 @@ protected:
 	/*内部函数*/;
 	void expand();
 	void swap(Rank, Rank);
+	bool shrink();
 
 public:
 	/*构造函数*/;
