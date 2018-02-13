@@ -60,9 +60,18 @@
     <ClCompile Include="MyVector\protected_func.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
+    <ClCompile Include="ListFunctions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyListNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyList.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

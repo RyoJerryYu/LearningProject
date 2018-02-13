@@ -1,5 +1,5 @@
-#include<iostream>
-#include"MyVector.h"
+#include <iostream>
+#include "MyVector.h"
 using namespace std;
 
 int VectorFunctions() {

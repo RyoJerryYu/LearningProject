@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ListFunctions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyVector\disordered.cpp" />
     <ClCompile Include="MyVector\find_deduplicate.cpp" />
@@ -131,6 +132,8 @@
     <ClCompile Include="VectorFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MyList.h" />
+    <ClInclude Include="MyListNode.h" />
     <ClInclude Include="MyVector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
