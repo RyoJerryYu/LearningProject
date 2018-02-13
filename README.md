@@ -8,7 +8,7 @@ my learning project, containing codes I learning whitch was written by VS2017.
 私の勉強プログラムですが、私の勉強している、VS2017に作成させたコードが含まれています。  
 *  `Project1`は、二つのシーケンスを比べし、最大のサブシーケンスを示します。  
 *  `DataStructure`は、私のデータ構成を勉強するために、作成するプログラムです。  
-	`Vector`部分は完了します。
+	`Vector`部分は完了します。  
 私は日本語を勉強していますが、もし間違い点がありますなら、どうぞ遠慮なくてご指摘ください。  
 
 # 学习项目
