@@ -51,6 +51,7 @@ int VectorFunctions() {
 	//Vector6.uniquify();
 	cout << Vector6 << endl;
 	cout << Vector6.search(3) << endl;
+	show(Vector6);
 
 	return 1;
 }

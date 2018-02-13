@@ -1,5 +1,4 @@
 # 未完成   
-*  构造遍历接口
 
 # 已完成  
 *  构造~MyVector与MyVector函数并测试
@@ -18,7 +17,8 @@
 *  构造operator>,<,>=,<=,==,!=,T*
 *  构造uniquify()
 *  构造search()
-*  以递归方法实现mergesort()
+*  以迭代方法实现mergesort()
+*  以函数对象方式构造遍历接口
 
 
 
@@ -44,7 +44,7 @@
 		}
 		return lo - 1;
 		
-	if语句中必不能为_elem[i]<t（或对应地，t<=_elem[i]），否则t=_elem[i]时进入i左方搜索不能返回秩最大者。  
+	if语句中必不能为_elem[i]<t（或对应地，t<=_elem[i]），否则t=_elem[i]时进入i左方搜索不能返回秩最大者。
 	如果使用：  
 	
 		while (lo < hi-1) {  
@@ -53,5 +53,34 @@
 			else { lo = mi; }  
 		}  
 		return lo;  
-	则当t足够小时，只能返回lo，不能返回-1。  
+	则当t足够小时，只能返回lo，不能返回-1。
 	t<_elem[lo]，也不合语义。
+*  类模板和函数模板不能合并一起声明
+	template <typename T>
+	template <typename VST>//前一个是类模板，后一个是函数模板
+	void MyVector<T>::traverse(VST & visit) {
+		for (int i = 0; i < _size; i++)visit(_elem[1]);
+	}
+*  函数对象方式的遍历接口实现：
+	template <typename T>
+	struct Show {
+		virtual void operator()(T & t) { cout << t << endl; }
+	};
+	
+	template <typename T>
+	void show(MyVector<T> & vector) {
+		Show<T> show;
+		vector.traverse(show);
+	}
+	与邓俊辉老师的实现方式不同。  
+	邓俊辉老师的实现方式：
+	template <typename T>
+	struct Increase{
+		virtual void operator()(T & e){e++; }
+	};
+	
+	template <typename T>
+	void increase(Vector<T> & V){
+		V.traverse(Increase<T>());
+	}
+	编译不能通过，原因未明。

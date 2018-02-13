@@ -56,7 +56,8 @@ public:
 	void mergesort();
 
 	/*遍历接口*/;
-	//void traverse(VST &);
+	template <typename VST>
+	void traverse(VST &);
 
 	/*重载操作符*/
 	T& operator[](Rank)const;
