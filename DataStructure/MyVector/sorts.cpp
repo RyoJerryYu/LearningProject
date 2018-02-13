@@ -7,11 +7,15 @@
 
 template <typename T>
 void MyVector<T>::sort() {
-	int n = rand() % 2;
-	switch (1) {
+	int n = rand() % 3;
+	switch (n) {
 	case 1:
 		cout << "using bubblesort." << endl;
 		bubblesort();
+		break;
+	case 2:
+		cout << "using mergesort." << endl;
+		mergesort();
 		break;
 	default:
 		cout << "sorry,sort faild." << endl;
@@ -33,7 +37,14 @@ void MyVector<T>::bubblesort() {
 
 template <typename T>
 void MyVector<T>::mergesort() {
-	;
+	int length = 1;
+	while (length < _size) {
+		for (Rank lo = 0; lo < _size; lo += (length * 2)) {
+			merge(lo, length);//合并从lo和lo+length开始的，长度为length的两个子序列，protected_func.cpp
+		}
+		length *= 2;
+	}
 }
+
 
 #endif //SORTS_CPP

@@ -118,7 +118,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyVector\disordered.cpp" />
     <ClCompile Include="MyVector\find_deduplicate.cpp" />
-    <ClCompile Include="MyVector\protectedfunc.cpp" />
+    <ClCompile Include="MyVector\protected_func.cpp" />
     <ClCompile Include="MyVector\insert.cpp" />
     <ClCompile Include="MyVector\MyVector.cpp" />
     <ClCompile Include="MyVector\operator.cpp" />

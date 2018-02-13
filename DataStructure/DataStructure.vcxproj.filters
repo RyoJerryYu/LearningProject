@@ -42,9 +42,6 @@
     <ClCompile Include="MyVector\disordered.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
-    <ClCompile Include="MyVector\protectedfunc.cpp">
-      <Filter>源文件\MyVector</Filter>
-    </ClCompile>
     <ClCompile Include="MyVector\remove.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
@@ -58,6 +55,9 @@
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
     <ClCompile Include="MyVector\traverse.cpp">
+      <Filter>源文件\MyVector</Filter>
+    </ClCompile>
+    <ClCompile Include="MyVector\protected_func.cpp">
       <Filter>源文件\MyVector</Filter>
     </ClCompile>
   </ItemGroup>

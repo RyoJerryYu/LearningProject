@@ -15,9 +15,10 @@ private:
 
 protected:
 	/*内部函数*/;
-	void expand();
+	bool expand();
 	void swap(Rank, Rank);
 	bool shrink();
+	void merge(Rank, int);
 
 public:
 	/*构造函数*/;
@@ -72,7 +73,7 @@ public:
 
 int VectorFunctions();
 #include "MyVector\MyVector.cpp" //模板类不支持直接多文件结构！
-#include "MyVector\protectedfunc.cpp"
+#include "MyVector\protected_func.cpp"
 #include "MyVector\size_get_put.cpp"
 #include "MyVector\insert.cpp"
 #include "MyVector\operator.cpp"

@@ -1,24 +1,24 @@
 # 未完成   
-*  实现mergesort()
 *  构造遍历接口
 
 # 已完成  
-*  构造~MyVector与MyVector函数并测试  
-*  MyVector类中重载[]运算符测试  
-*  构造expand函数  
-*  构造size和get函数  
-*  构造insert函数  
-*  重载运算符=、<<  
-*  构造disordered函数  
-*  构造sort函数  
-*  构造bubblesort函数  
-*  构造remove函数  
-*  重新构造insert与remove  
-*  构造shrink()  
-*  构造find()，deduplicate()  
-*  构造operator>,<,>=,<=,==,!=,T*  
-*  构造uniquify()  
-*  构造search() 
+*  构造~MyVector与MyVector函数并测试
+*  MyVector类中重载[]运算符测试
+*  构造expand函数
+*  构造size和get函数
+*  构造insert函数
+*  重载运算符=、<<
+*  构造disordered函数
+*  构造sort函数
+*  构造bubblesort函数
+*  构造remove函数
+*  重新构造insert与remove
+*  构造shrink()
+*  构造find()，deduplicate()
+*  构造operator>,<,>=,<=,==,!=,T*
+*  构造uniquify()
+*  构造search()
+*  以递归方法实现mergesort()
 
 
 
