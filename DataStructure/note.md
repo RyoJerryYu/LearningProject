@@ -44,24 +44,27 @@
 		}
 		return lo - 1;
 		
-	if语句中必不能为_elem[i]<t（或对应地，t<=_elem[i]），否则t=_elem[i]时进入i左方搜索不能返回秩最大者。
+	if语句中必不能为`_elem[i]<t`（或对应地，`t<=_elem[i]`），否则`t=_elem[i]`时进入`i`左方搜索不能返回秩最大者。
 	如果使用：  
 	
-		while (lo < hi-1) {  
-			Rank mi = (lo + hi) / 2;  
-			if (t < _elem[mi]) { hi = mi; }  
-			else { lo = mi; }  
-		}  
-		return lo;  
-	则当t足够小时，只能返回lo，不能返回-1。
-	t<_elem[lo]，也不合语义。
+		while (lo < hi-1) {
+			Rank mi = (lo + hi) / 2;
+			if (t < _elem[mi]) { hi = mi; }
+			else { lo = mi; }
+		}
+		return lo;
+		
+	则当`t`足够小时，只能返回`lo`，不能返回`-1`。同时`t<_elem[lo]`，也不合语义。
 *  类模板和函数模板不能合并一起声明
+
 		template <typename T>
 		template <typename VST>//前一个是类模板，后一个是函数模板
 		void MyVector<T>::traverse(VST & visit) {
 			for (int i = 0; i < _size; i++)visit(_elem[1]);
 		}
+		
 *  函数对象方式的遍历接口实现：
+
 		template <typename T>
 		struct Show {
 			virtual void operator()(T & t) { cout << t << endl; }
@@ -72,8 +75,10 @@
 			Show<T> show;
 			vector.traverse(show);
 		}
+		
 	与邓俊辉老师的实现方式不同。  
 	邓俊辉老师的实现方式：
+	
 		template <typename T>
 		struct Increase{
 			virtual void operator()(T & e){e++; }
@@ -83,4 +88,5 @@
 		void increase(Vector<T> & V){
 			V.traverse(Increase<T>());
 		}
+		
 	编译不能通过，原因未明。
