@@ -16,6 +16,9 @@
     <Filter Include="源文件\MyVector">
       <UniqueIdentifier>{7dc3e94d-152b-4f06-968b-6c36ab7d6811}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\MyList">
+      <UniqueIdentifier>{eec7b783-1e4f-4bfc-8f44-34aa1742f44d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -62,6 +65,9 @@
     </ClCompile>
     <ClCompile Include="ListFunctions.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyList\MyList.cpp">
+      <Filter>源文件\MyList</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

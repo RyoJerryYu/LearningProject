@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="ListFunctions.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyList\MyList.cpp" />
     <ClCompile Include="MyVector\disordered.cpp" />
     <ClCompile Include="MyVector\find_deduplicate.cpp" />
     <ClCompile Include="MyVector\protected_func.cpp" />

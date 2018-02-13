@@ -7,12 +7,14 @@ template <typename T>
 class MyList {
 private:
 	int _size;
-	Posi(T) header, trailer;
+	Posi(T) header;
+	Posi(T) trailer;
 protected:
 	/*内部函数*/
 
 public:
 	/*构造函数*/
+	MyList();
 	/*析构函数*/
 	/*只读接口*/
 	/*可写接口*/
@@ -20,5 +22,6 @@ public:
 };
 
 int ListFunctions();
+#include "MyList\MyList.cpp"
 
 #endif //MY_LIST_H
