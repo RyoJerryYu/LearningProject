@@ -26,24 +26,22 @@ MyVector<T>& MyVector<T>::operator=(MyVector<T> vector) {
 
 template <typename T>
 bool MyVector<T>::operator<(const MyVector<T> & vector) {
-	if (_size < vector._size)return true;
-	return false;
+	return _size < vector._size;
 }
 
 template <typename T>
 bool MyVector<T>::operator>(const MyVector<T> & vector) {
-	if (_size > vector._size)return true;
-	return false;
+	return _size > vector._size;
 }
 
 template <typename T>
 bool MyVector<T>::operator<=(const MyVector<T> & vector) {
-	return !(*this > vector);
+	return _size <= vector._size;
 }
 
 template <typename T>
 bool MyVector<T>::operator>=(const MyVector<T> & vector) {
-	return !(*this < vector);
+	return )size >= vector._size;
 }
 
 template <typename T>

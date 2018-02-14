@@ -10,13 +10,13 @@ int MyVector<T>::size() const {
 }
 
 template<typename T>
-T& MyVector<T>::get(Rank r) {
+T & MyVector<T>::get(Rank r) {
 	if (r < 0 || _size <= r) { cout << "非法秩访问" << endl; exit(0); }
 	return _elem[r];
 }
 
 template<typename T>
-T MyVector<T>::put(Rank r, T t) {
+T & MyVector<T>::put(Rank r, const T & t) {
 	if (r < 0 || _size < r) { cout << "非法秩访问" << endl; exit(0); }
 	if (r == _size) { _size++; expand(); }
 	return _elem[r] = t;

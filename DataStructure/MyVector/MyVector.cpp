@@ -15,7 +15,7 @@ MyVector<T>::MyVector(int size) :_size(size) {
 }
 
 template <typename T>
-MyVector<T>::MyVector(int size, T t) :_size(size) {
+MyVector<T>::MyVector(int size, const T & t) :_size(size) {
 	_capacity = 2 * _size;
 	_elem = new T[_capacity];
 	for (int i = 0; i < _size; i++) {

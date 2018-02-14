@@ -4,7 +4,7 @@
 #include "..\MyVector.h"
 
 template <typename T>
-T MyVector<T>::insert(Rank r,const T & t) {
+T & MyVector<T>::insert(Rank r,const T & t) {
 	if (r < 0 || _size < r) { cout << "·Ç·¨ÖÈ²åÈë" << endl; exit(0); }
 	insert(r, 1, t);
 	return _elem[r];

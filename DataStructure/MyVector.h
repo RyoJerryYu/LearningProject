@@ -24,16 +24,16 @@ public:
 	/*构造函数*/;
 	MyVector();
 	MyVector(int);
-	MyVector(int, T);
+	MyVector(int, const T &);
 	MyVector(const T*, Rank, Rank);
-	MyVector(const MyVector<T>& A);
+	MyVector(const MyVector<T> & A);
 	
 	/*析构函数*/;
 	~MyVector();
 	
 	/*只读接口*/;
 	int size() const;
-	T& get(Rank);
+	T & get(Rank);
 	int disordered();
 	Rank find(const T &);//用于实现find(T,Rank=0,Rank=_size)，只能用静态成员作默认参数，模板类成员函数不能外部定义默认参数
 	Rank find(const T &, Rank, Rank);
@@ -43,8 +43,8 @@ public:
 	Rank binsearch(const T &, Rank, Rank);
 
 	/*可写接口*/;
-	T put(Rank, T);
-	T insert(Rank, const T &);
+	T & put(Rank, const T &);
+	T & insert(Rank, const T &);
 	T insert(Rank, int, const T &);
 	T remove(Rank);
 	int remove(Rank, Rank);
