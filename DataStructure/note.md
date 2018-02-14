@@ -20,6 +20,7 @@
 *  构造`search()`
 *  以迭代方法实现`mergesort()`
 *  以函数对象方式构造遍历接口`traverse()`
+*  更改了大小比较运算符与部分函数引用传值
 
 ## List:
 *  完成`MyListNode`构造
@@ -93,6 +94,29 @@
 		}
 		
 	编译不能通过，原因未明。
+*  传值与传应用：
+	传值时会调用拷贝构造函数，类中虚函数会因被切割而失去多态性。
+	传引用可解决此类问题。
+	同时，传引用可减少拷贝构造与析构的时间，在时间复杂度高的场合必用。
+	作为遍历接口的函数对象中，为保证多态性，引用不可省略：
+	`
+	template <typename T>
+	template <typename VST>//前一个是类模板，后一个是函数模板，不能合并！！
+	void MyVector<T>::traverse(VST & visit) {//这里省去引用则函数对象失去多态性
+		for (int i = 0; i < _size; i++)visit(_elem[i]);
+	}
+	
+	template <typename T>
+	struct Show {
+		virtual void operator()(T & t) { cout << t << endl; }//虚函数保证多态性
+	};
+	
+	template <typename T>
+	void show(MyVector<T> & vector) {//这里省去引用则会调用构造函数占用时间
+		Show<T> show;
+		vector.traverse(show);
+	}
+	`
 	
 ## List部分
 *  指针声明时不能用逗号连续声明，`Posi(T) header,trailer`错误，因为`Posi(T)`声明一个指针。
