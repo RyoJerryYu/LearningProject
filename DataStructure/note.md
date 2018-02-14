@@ -100,24 +100,22 @@
 	同时，传引用可减少拷贝构造与析构的时间，在时间复杂度高的场合必用。
 	作为遍历接口的函数对象中，为保证多态性，引用不可省略：
 	
-	`
-	template <typename T>
-	template <typename VST>//前一个是类模板，后一个是函数模板，不能合并！！
-	void MyVector<T>::traverse(VST & visit) {//这里省去引用则函数对象失去多态性
-		for (int i = 0; i < _size; i++)visit(_elem[i]);
-	}
-	
-	template <typename T>
-	struct Show {
-		virtual void operator()(T & t) { cout << t << endl; }//虚函数保证多态性
-	};
-	
-	template <typename T>
-	void show(MyVector<T> & vector) {//这里省去引用则会调用构造函数占用时间
-		Show<T> show;
-		vector.traverse(show);
-	}
-	`
+		template <typename T>
+		template <typename VST>//前一个是类模板，后一个是函数模板，不能合并！！
+		void MyVector<T>::traverse(VST & visit) {//这里省去引用则函数对象失去多态性
+			for (int i = 0; i < _size; i++)visit(_elem[i]);
+		}
+		
+		template <typename T>
+		struct Show {
+			virtual void operator()(T & t) { cout << t << endl; }//虚函数保证多态性
+		};
+		
+		template <typename T>
+		void show(MyVector<T> & vector) {//这里省去引用则会调用构造函数占用时间
+			Show<T> show;
+			vector.traverse(show);
+		}
 	
 ## List部分
 *  指针声明时不能用逗号连续声明，`Posi(T) header,trailer`错误，因为`Posi(T)`声明一个指针。
