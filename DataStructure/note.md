@@ -34,11 +34,11 @@
 *  类模板声明与实现不能分开！(可以在`main`或声明中`#include`实现文件解决)
 *  `a[i]=a[i--]`错误！先右后左
 *  模板构造函数永远不会被认为是拷贝构造函数，`Vector2=Vector4`语句出错（存在指针数据成员，析构时）
-*  先`using namespace std;`后再使用`ostream`类
+*  `ostream`的声明在命名空间`std`里，要先`using namespace std;`后再使用`ostream`类
 *  友元函数模板声明时先说明模板
 *  “类模板的成员的外部定义不得具有默认参数”，解决方法：成员函数声明时带默认参数，实现时不带
-*  “将成员作为默认参数使用要求静态成员”，不能使用`_size`作为默认参数
-*  增加一个`find(T)`函数来实现`find(T t, Rank lo=0,Rank hi=_size)`
+	“将成员作为默认参数使用要求静态成员”，不能使用`_size`作为默认参数
+	增加一个`find(T)`函数来实现`find(T t, Rank lo=0,Rank hi=_size)`
 *  binary tree:  
 
 		while (lo < hi) {
@@ -99,24 +99,23 @@
 	传引用可解决此类问题。
 	同时，传引用可减少拷贝构造与析构的时间，在时间复杂度高的场合必用。
 	作为遍历接口的函数对象中，为保证多态性，引用不可省略：
-	`
-	template <typename T>
-	template <typename VST>//前一个是类模板，后一个是函数模板，不能合并！！
-	void MyVector<T>::traverse(VST & visit) {//这里省去引用则函数对象失去多态性
-		for (int i = 0; i < _size; i++)visit(_elem[i]);
-	}
 	
-	template <typename T>
-	struct Show {
-		virtual void operator()(T & t) { cout << t << endl; }//虚函数保证多态性
-	};
-	
-	template <typename T>
-	void show(MyVector<T> & vector) {//这里省去引用则会调用构造函数占用时间
-		Show<T> show;
-		vector.traverse(show);
-	}
-	`
+		template <typename T>
+		template <typename VST>
+		void MyVector<T>::traverse(VST & visit) {//这里省去引用则函数对象失去多态性
+			for (int i = 0; i < _size; i++)visit(_elem[i]);
+		}
+		
+		template <typename T>
+		struct Show {
+			virtual void operator()(T & t) { cout << t << endl; }//虚函数保证多态性
+		};
+		
+		template <typename T>
+		void show(MyVector<T> & vector) {//这里省去引用则会调用构造函数占用时间
+			Show<T> show;
+			vector.traverse(show);
+		}
 	
 ## List部分
 *  指针声明时不能用逗号连续声明，`Posi(T) header,trailer`错误，因为`Posi(T)`声明一个指针。
