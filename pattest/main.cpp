@@ -6,11 +6,15 @@ int main() {
 	while (n) {
 		cout << "input a number below:" << endl;
 		cout << "1:1016" << endl;
+		cout << "2:1005" << endl;
 		cout << "input others to exit." << endl;
-		cin >> n;
-		switch (n) {
+		//cin >> n;
+		switch (2) {
 		case 1:
 			pro1016();
+			break;
+		case 2:
+			pro1005();
 			break;
 		default:
 			n = 0;

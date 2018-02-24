@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "head.h"
 using namespace std;
 int pro1016() {
 	string a, b;
