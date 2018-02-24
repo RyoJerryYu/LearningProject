@@ -3,6 +3,7 @@ my learning project, containing codes I learning whitch was written by VS2017.
 *  `Project1`：A program that succeed compairing two strings to find a substring that has maximum length.  
 *  `DataStructure`: My program to exersice data structure.  
 	`Vector` part was finished.
+*  `pattest`：My exercises for pat.
 
 # 勉強プログラム 
 私の勉強プログラムですが、私の勉強している、VS2017に作成させたコードが含まれています。  
