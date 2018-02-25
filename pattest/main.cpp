@@ -8,13 +8,16 @@ int main() {
 		cout << "1:1016" << endl;
 		cout << "2:1005" << endl;
 		cout << "input others to exit." << endl;
-		//cin >> n;
-		switch (2) {
+		cin >> n;
+		switch (n%4) {
 		case 1:
 			pro1016();
 			break;
 		case 2:
 			pro1005();
+			break;
+		case 3:
+			pro1002();
 			break;
 		default:
 			n = 0;
