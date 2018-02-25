@@ -2,7 +2,7 @@
 #include <string>
 #include "head.h"
 using namespace std;
-int pro1016() {
+int pro1006() {
 	string a, b;
 	int da, db;
 	long pa = 0, pb = 0;
