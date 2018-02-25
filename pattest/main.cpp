@@ -25,6 +25,9 @@ int main() {
 		case 5:
 			pro1004();
 			break;
+		case 6:
+			pro1001();
+			break;
 		default:
 			n = 0;
 		}
