@@ -11,10 +11,10 @@ int main() {
 		cin >> n;
 		switch (n) {
 		case 1:
-			pro1006();
+			pro1001();
 			break;
 		case 2:
-			pro1005();
+			pro1004();
 			break;
 		case 3:
 			pro1002();
@@ -23,10 +23,13 @@ int main() {
 			pro1003();
 			break;
 		case 5:
-			pro1004();
+			pro1005();
 			break;
 		case 6:
-			pro1001();
+			pro1006();
+			break;
+		case 7:
+			pro1007();
 			break;
 		default:
 			n = 0;
