@@ -31,6 +31,9 @@ int main() {
 		case 7:
 			pro1007();
 			break;
+		case 8:
+			pro1008();
+			break;
 		default:
 			n = 0;
 		}
