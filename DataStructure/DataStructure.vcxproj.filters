@@ -69,6 +69,9 @@
     <ClCompile Include="MyList\MyList.cpp">
       <Filter>源文件\MyList</Filter>
     </ClCompile>
+    <ClCompile Include="MyList\operator.cpp">
+      <Filter>源文件\MyList</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector.h">

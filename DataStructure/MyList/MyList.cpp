@@ -46,4 +46,22 @@ MyList<T>::MyList(const T* str, int lo, int hi) {
 	trailer->pred = pointer;
 }
 
+template <typename T>
+MyList<T>::MyList(const MyList<T>& A) {
+	_size = A._size;
+	header = new MyListNode<T>;
+	trailer = new MyListNode<T>;
+	Posi(T) pointer = header;
+	Posi(T) pointerA = A.header;
+	for (int i = 0; i < _size; i++) {
+		pointer->succ = new MyListNode<T>;
+		pointer->succ->pred = pointer;
+		pointer = pointer->succ;
+		pointerA = pointerA->succ;
+		pointer->data = pointerA->data;
+	}
+	pointer->succ = trailer;
+	trailer->pred = pointer;
+}
+
 #endif //MY_LIST_CPP
