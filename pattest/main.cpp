@@ -36,6 +36,10 @@ int main() {
 			break;
 		case 9:
 			pro1009();
+			break;
+		case 10:
+			pro1010();
+			break;
 		default:
 			n = 0;
 		}
