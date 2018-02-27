@@ -42,6 +42,9 @@
     <ClCompile Include="1008.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="1009.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="head.h">
