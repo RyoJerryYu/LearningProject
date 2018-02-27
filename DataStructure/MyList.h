@@ -15,8 +15,8 @@ protected:
 public:
 	/*构造函数*/
 	MyList();
-	MyList(int, const T&);/*
-	MyList(const T*, int, int);
+	MyList(int, const T&);
+	MyList(const T*, int, int);/*
 	MyList(const MyList<T> &);*/
 	/*析构函数*/
 	/*只读接口*/
