@@ -26,7 +26,7 @@ public:
 	MyVector(int);
 	MyVector(int, const T &);
 	MyVector(const T*, Rank, Rank);
-	MyVector(const MyVector<T> & A);
+	MyVector(const MyVector<T> &);
 	
 	/*Îö¹¹º¯Êý*/;
 	~MyVector();

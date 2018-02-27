@@ -41,7 +41,7 @@ bool MyVector<T>::operator<=(const MyVector<T> & vector) {
 
 template <typename T>
 bool MyVector<T>::operator>=(const MyVector<T> & vector) {
-	return )size >= vector._size;
+	return _size >= vector._size;
 }
 
 template <typename T>
