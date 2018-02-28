@@ -34,4 +34,5 @@ int pro1010() {
 	soldprice -= per[k] * n;
 	printf("%.2f", soldprice);
 	delete[] storage, price, per;
+	return 0;
 }
