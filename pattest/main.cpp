@@ -5,8 +5,6 @@ int main() {
 	int n=1;
 	while (n) {
 		cout << "input a number below:" << endl;
-		cout << "1:1016" << endl;
-		cout << "2:1005" << endl;
 		cout << "input others to exit." << endl;
 		cin >> n;
 		switch (n) {
@@ -42,6 +40,10 @@ int main() {
 			break;
 		case 15:
 			pro1015();
+			break;
+		case 20:
+			pro1020();
+			break;
 		default:
 			n = 0;
 		}
