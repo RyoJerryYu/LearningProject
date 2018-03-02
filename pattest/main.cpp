@@ -38,6 +38,9 @@ int main() {
 		case 10:
 			pro1010();
 			break;
+		case 11:
+			pro1011();
+			break;
 		case 15:
 			pro1015();
 			break;
