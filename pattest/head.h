@@ -10,5 +10,6 @@ int pro1018();
 int pro1019();
 int pro1020();
 int pro1021();
+int pro1022();
 int pro1025();
 int pro1030();

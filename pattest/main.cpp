@@ -41,6 +41,8 @@ int main() {
 		case 21:
 			pro1021();
 			break;
+		case 22:
+			pro1022();
 		case 25:
 			pro1025();
 			break;
