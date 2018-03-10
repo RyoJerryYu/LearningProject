@@ -43,11 +43,60 @@ int main() {
 			break;
 		case 22:
 			pro1022();
+			break;
+		case 23:
+			pro1023();
+			break;
+		case 24:
+			pro1024();
+			break;
 		case 25:
 			pro1025();
 			break;
+		case 26:
+			pro1026();
+			break;
+		case 27:
+			pro1027();
+			break;
+		case 28:
+			pro1028();
+			break;
+		case 29:
+			pro1029();
+			break;
 		case 30:
 			pro1030();
+			break;
+		case 31:
+			pro1031();
+			break;
+		case 32:
+			pro1032();
+			break;
+		case 33:
+			pro1033();
+			break;
+		case 34:
+			pro1034();
+			break;
+		case 35:
+			pro1035();
+			break;
+		case 36:
+			pro1036();
+			break;
+		case 37:
+			pro1037();
+			break;
+		case 38:
+			pro1038();
+			break;
+		case 39:
+			pro1039();
+			break;
+		case 40:
+			pro1040();
 			break;
 		default:
 			n = 0;
