@@ -1,15 +1,21 @@
 #include <iostream>
-#include <string>
+#include "head.h"
 using namespace std;
-int pro1011() {
-	int d[10] = { 0 };
-	string N;
-	cin >> N;
-	for (const auto& n : N) {
-		d[(n - '0') % 10]++;
+int pro1001() {
+	int n;
+	long a[10][3];
+	cin >> n;
+	for (int i = 0; i<n; i++) {
+		cin >> a[i][0] >> a[i][1] >> a[i][2];
 	}
-	for (int i = 0; i < 10; i++) {
-		if (d[i] != 0) cout << i << ":" << d[i] << endl;
+	for (int i = 0; i<n; i++) {
+		cout << "Case #" << i + 1 << ": ";
+		if (a[i][0] + a[i][1]>a[i][2]) {
+			cout << "true" << endl;
+		}
+		else {
+			cout << "false" << endl;
+		}
 	}
 	return 0;
 }

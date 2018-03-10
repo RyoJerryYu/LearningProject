@@ -117,8 +117,6 @@
   <ItemGroup>
     <ClCompile Include="ListFunctions.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyList\MyList.cpp" />
-    <ClCompile Include="MyList\operator.cpp" />
     <ClCompile Include="VectorFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>

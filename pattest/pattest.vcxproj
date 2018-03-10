@@ -115,19 +115,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="1001.cpp" />
-    <ClCompile Include="1002.cpp" />
-    <ClCompile Include="1003.cpp" />
-    <ClCompile Include="1004.cpp" />
-    <ClCompile Include="1005.cpp" />
-    <ClCompile Include="1006.cpp" />
-    <ClCompile Include="1007.cpp" />
-    <ClCompile Include="1008.cpp" />
-    <ClCompile Include="1009.cpp" />
-    <ClCompile Include="1010.cpp" />
     <ClCompile Include="1011.cpp" />
+    <ClCompile Include="1012.cpp" />
+    <ClCompile Include="1013.cpp" />
+    <ClCompile Include="1014.cpp" />
     <ClCompile Include="1015.cpp" />
+    <ClCompile Include="1016.cpp" />
+    <ClCompile Include="1017.cpp" />
+    <ClCompile Include="1018.cpp" />
+    <ClCompile Include="1019.cpp" />
     <ClCompile Include="1020.cpp" />
+    <ClCompile Include="1021.cpp" />
+    <ClCompile Include="1025.cpp" />
+    <ClCompile Include="1030.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

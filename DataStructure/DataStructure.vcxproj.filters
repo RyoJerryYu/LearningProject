@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="源文件\MyList">
-      <UniqueIdentifier>{eec7b783-1e4f-4bfc-8f44-34aa1742f44d}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -26,12 +23,6 @@
     </ClCompile>
     <ClCompile Include="ListFunctions.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MyList\MyList.cpp">
-      <Filter>源文件\MyList</Filter>
-    </ClCompile>
-    <ClCompile Include="MyList\operator.cpp">
-      <Filter>源文件\MyList</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

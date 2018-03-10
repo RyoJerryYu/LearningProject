@@ -1,31 +1,38 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <stdio.h>
 using namespace std;
-/*
-int search(const vector<long> & num, const long & value) {
-int lo = 0, hi = num.size();
-while (hi != lo) {
-int mi = (lo + hi) >> 1;
-if (value < num[mi]) hi = mi;
-else lo = mi + 1;
-}
-return lo - 1;
-}*/
-int pro1020() {
-	int N;
-	long p;
-	cin >> N >> p;
-	vector<long> num(N);
-	for (int i = 0; i < N; i++) cin >> num[i];
-	sort(num.begin(), num.end());
-	int q = 1;//p是正整数，至少有一个
+int pro1010() {
+	int N = 0, need = 0, *storage = 0, *price = 0, soldnum = 0;
+	float *per = 0, soldprice = 0;
+	cin >> N >> need;
+	storage = new int[N], price = new int[N], per = new float[N];
 	for (int i = 0; i < N; i++) {
-		long long max = (long long)num[i] * p;
-		//int maxi = search(num, max) + 1;//指向第一个大于max的位置
-		int maxi = upper_bound(num.begin() + i, num.end(), max) - num.begin();//从i开始查找而不是从0开始
-		if (maxi - i > q)q = maxi - i;//使得maxi-i为完美序列中数的个数
+		cin >> storage[i];
 	}
-	cout << q;
+	for (int i = 0; i < N; i++) {
+		cin >> price[i];
+		per[i] = float(price[i]) / storage[i];
+	}
+	int k = 0;
+	for (int i = N - 1; i > 0; i--) {//bubble sort
+		for (int j = 0; j < i; j++) {
+			if (per[j] < per[j + 1]) {
+				int m = storage[j]; storage[j] = storage[j + 1]; storage[j + 1] = m;
+				m = price[j]; price[j] = price[j + 1]; price[j + 1] = m;
+				float l = per[j]; per[j] = per[j + 1]; per[j + 1] = l;
+				k = j + 2;
+			}
+		}
+		i = k; k = 0;
+	}
+	k = 0;
+	while (soldnum < need) {
+		soldnum += storage[k]; soldprice += price[k];
+		k++;
+	}
+	int n = soldnum - need; k--;
+	soldprice -= per[k] * n;
+	printf("%.2f", soldprice);
+	delete[] storage, price, per;
 	return 0;
 }

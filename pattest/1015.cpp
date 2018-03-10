@@ -1,35 +1,101 @@
 #include <iostream>
-#include <algorithm>
-#include <vector>
-#include <stdio.h>
 using namespace std;
-struct listnode {
-	int data, next;
+struct stu {
+	int id, de, cai;
 };
-int pro1015() {
-	int first, n, k;
-	listnode thelist[100002];
-	cin >> first >> n >> k;
-	int addri;
-	for (int i = 0; i<n; i++) {
-		cin >> addri;
-		cin >> thelist[addri].data >> thelist[addri].next;
+void sortres(stu* res, int lo, int hi) {
+	if (hi - lo<2)return;
+	int mi = (lo + hi) >> 1;//归并排序
+	sortres(res, lo, mi);
+	sortres(res, mi, hi);
+	stu* before = new stu[mi - lo];
+	int i = 0, j = mi, k = lo;
+	for (; i<(mi - lo); i++) {
+		before[i] = res[i + lo];
 	}
-	int count = 0;
-	vector<int> addr(n + 1, -1);
-	addr[0] = first;
-	while (addr[count] != -1) {
-		count++;
-		addr[count] = thelist[addr[count - 1]].next;
+	i = 0;
+	while (i<(mi - lo) && j<hi) {
+		if ((before[i].de + before[i].cai)>(res[j].de + res[j].cai)) {
+			res[k] = before[i];
+			k++; i++;
+		}
+		else if ((before[i].de + before[i].cai)<(res[j].de + res[j].cai)) {
+			res[k] = res[j];
+			k++; j++;
+		}
+		else {
+			if (before[i].de>res[j].de) {
+				res[k] = before[i];
+				k++; i++;
+			}
+			else if (before[i].de<res[j].de) {
+				res[k] = res[j];
+				k++; j++;
+			}
+			else {
+				if (before[i].id<res[j].id) {
+					res[k] = before[i];
+					k++; i++;
+				}
+				else {
+					res[k] = res[j];
+					k++; j++;
+				}
+			}
+		}
 	}
-	for (int i = 0; i + k <= count; i += k) {
-		reverse(addr.begin() + i, addr.begin() + i + k);
+	while (i<(mi - lo)) {
+		res[k] = before[i];
+		k++; i++;
 	}
-	for (int i = 0; i<count - 1; i++) {
-		thelist[addr[i]].next = addr[i + 1];
-		printf("%05d %d %05d\n", addr[i], thelist[addr[i]].data, thelist[addr[i]].next);
+	delete[] before;
+}
+int pro1005() {
+	int N = 0, L = 60, H = 60;
+	int M = 0;
+	int i, j = 0, k = 0;
+	cin >> N >> L >> H;
+	stu* student = new stu[N];
+	stu* result = new stu[N];
+	for (i = 0; i<N; i++) {
+		cin >> student[i].id >> student[i].de >> student[i].cai;
 	}
-	thelist[addr[count - 1]].next = -1;
-	printf("%05d %d -1", addr[count - 1], thelist[addr[count - 1]].data);
+	for (i = 0; i<N; i++) {//德才全尽
+		if (student[i].de >= H && student[i].cai >= H) {
+			result[j] = student[i];
+			j++; M++;
+		}
+	}
+	sortres(result, k, j);
+	k = j;
+	for (i = 0; i<N; i++) {//德胜才
+		if (student[i].de >= H && L <= student[i].cai && student[i].cai <H) {
+			result[j] = student[i];
+			j++; M++;
+		}
+	}
+	sortres(result, k, j);
+	k = j;
+	for (i = 0; i<N; i++) {//才德兼亡
+		if (L <= student[i].de && student[i].de<H && L <= student[i].cai && student[i].cai <= student[i].de) {
+			result[j] = student[i];
+			j++; M++;
+		}
+	}
+	sortres(result, k, j);
+	k = j;
+	for (i = 0; i<N; i++) {//才胜德
+		if (L <= student[i].de && student[i].de < student[i].cai && student[i].de<H) {
+			result[j] = student[i];
+			j++; M++;
+		}
+	}
+	sortres(result, k, j);
+	cout << M << endl;
+	for (i = 0; i<j; i++) {
+		cout << result[i].id << " " << result[i].de << " " << result[i].cai << endl;
+	}
+	delete[] student;
+	delete[] result;
 	return 0;
 }
