@@ -27,7 +27,7 @@ public:
 		}
 	}
 };
-int pro1009() {
+int pro1019() {
 	int N = 0; thenum A;
 	cin >> N;
 	A.breaknum(N);

@@ -6,7 +6,7 @@ using namespace std;
 struct listnode {
 	int data, next;
 };
-int pro1015() {
+int pro1025() {
 	int first, n, k;
 	listnode thelist[100002];
 	cin >> first >> n >> k;

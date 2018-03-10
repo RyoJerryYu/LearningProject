@@ -1,7 +1,7 @@
 #include <iostream>
 #include "head.h"
 using namespace std;
-int pro1007() {
+int pro1017() {
 	char A[1001] = { 0 }, Q[1001] = { 0 };
 	int B = 0, R = 0;
 	int i = 0, j = 0;

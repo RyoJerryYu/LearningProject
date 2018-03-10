@@ -17,7 +17,7 @@ public:
 		return give[n];
 	}
 };
-int pro1008() {
+int pro1018() {
 	player A, B; int N = 0; char Ause, Buse;
 	cin >> N;
 	for (int i = 0; i<N; i++) {

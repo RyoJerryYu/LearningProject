@@ -50,7 +50,7 @@ void sortres(stu* res, int lo, int hi) {
 	}
 	delete[] before;
 }
-int pro1005() {
+int pro1015() {
 	int N = 0, L = 60, H = 60;
 	int M = 0;
 	int i, j = 0, k = 0;

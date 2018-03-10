@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 using namespace std;
-int pro1002() {
+int pro1012() {
 	int n = 0, x = 0, y = 0;
 	int a1 = 0, a2 = 0, a3 = 0, a5 = 0;
 	float a4 = 0;

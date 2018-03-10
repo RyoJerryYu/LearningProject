@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 using namespace std;
-int pro1010() {
+int pro1020() {
 	int N = 0, need = 0, *storage = 0, *price = 0, soldnum = 0;
 	float *per = 0, soldprice = 0;
 	cin >> N >> need;

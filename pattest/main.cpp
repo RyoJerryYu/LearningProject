@@ -8,44 +8,44 @@ int main() {
 		cout << "input others to exit." << endl;
 		cin >> n;
 		switch (n) {
-		case 1:
-			pro1001();
-			break;
-		case 2:
-			pro1004();
-			break;
-		case 3:
-			pro1002();
-			break;
-		case 4:
-			pro1003();
-			break;
-		case 5:
-			pro1005();
-			break;
-		case 6:
-			pro1006();
-			break;
-		case 7:
-			pro1007();
-			break;
-		case 8:
-			pro1008();
-			break;
-		case 9:
-			pro1009();
-			break;
-		case 10:
-			pro1010();
-			break;
 		case 11:
 			pro1011();
+			break;
+		case 12:
+			pro1012();
+			break;
+		case 13:
+			pro1013();
+			break;
+		case 14:
+			pro1014();
 			break;
 		case 15:
 			pro1015();
 			break;
+		case 16:
+			pro1016();
+			break;
+		case 17:
+			pro1017();
+			break;
+		case 18:
+			pro1018();
+			break;
+		case 19:
+			pro1019();
+			break;
 		case 20:
 			pro1020();
+			break;
+		case 21:
+			pro1021();
+			break;
+		case 25:
+			pro1025();
+			break;
+		case 30:
+			pro1030();
 			break;
 		default:
 			n = 0;

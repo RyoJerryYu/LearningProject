@@ -1,7 +1,7 @@
 #include <iostream>
 #include "head.h"
 using namespace std;
-int pro1001() {
+int pro1011() {
 	int n;
 	long a[10][3];
 	cin >> n;

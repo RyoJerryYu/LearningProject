@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-int pro1011() {
+int pro1021() {
 	int d[10] = { 0 };
 	string N;
 	cin >> N;

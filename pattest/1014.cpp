@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "head.h"
 using namespace std;
-int pro1004() {
+int pro1014() {
 	string a1, a2, b1, b2;
 	int i = 0, j = 0, count = 0;
 	int d = 0, h = 0, m = 0;

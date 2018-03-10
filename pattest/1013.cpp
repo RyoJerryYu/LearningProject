@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int pro1003() {//i:第i个素数,j:正整数,k:小于j的第k个素数,l:这行输出的个数
+int pro1013() {//i:第i个素数,j:正整数,k:小于j的第k个素数,l:这行输出的个数
 	int m = 1, n = 1, i = 0, j = 2, k = 0, l = 0, res = 0;
 	cin >> m >> n; m -= 1;
 	int *p = new int[n];
