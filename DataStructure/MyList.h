@@ -30,6 +30,11 @@ public:
 	int disordered() const;
 
 	/*可写接口*/
+	Posi(T) insertAsFirst(T const&);
+	Posi(T) insertAsLast(T const&);
+	Posi(T) insertAft(Posi(T), T const&);
+	Posi(T) insertBfr(Posi(T), T const&);
+
 	/*遍历接口*/
 	/*重载操作符*/
 	MyList<T>& operator=(MyList<T>&);
@@ -144,6 +149,39 @@ int MyList<T>::disordered()const {
 
 
 /*********************Writable*********************/
+template <typename T>
+Posi(T) MyList<T>::insertAsFirst(T const& t) {
+	Posi(T) p = new MyListNode<T>(t, header, header->succ);
+	header->succ->pred = p;
+	header->succ = p;
+	return p;
+}
+
+template <typename T>
+Posi(T) MyList<T>::insertAsLast(T const& t) {
+	Posi(T) p = new MyListNode<T>(t, trailer->pred, trailer);
+	trailer->pred->succ = p;
+	trailer->pred = p;
+	return p;
+}
+
+template <typename T>
+Posi(T) MyList<T>::insertAft(Posi(T) p, T const& t) {
+	Posi(T) pi = new MyListNode<T>(t, p, p->succ);
+	p->succ->pred = pi;
+	p->succ = pi;
+	return pi;
+}
+
+template <typename T>
+Posi(T) MyList<T>::insertBfr(Posi(T) p, T const& t) {
+	Posi(T) pi = new MyListNode<T>(t, p->pred, p);
+	p->pred->succ = pi;
+	p->pred = pi;
+	return pi;
+}
+
+
 /*********************Traverse*********************/
 /*********************Operator*********************/
 template <typename T>
@@ -169,12 +207,14 @@ MyList<T>& MyList<T>::operator=(MyList<T>& A) {
 
 template <typename T>
 ostream& operator<<(ostream& output, MyList<T>& it) {
+	output << "MyList:{";
 	Posi(T) pointer = it.header;
 	pointer = pointer->succ;
 	while (pointer != it.trailer) {
-		output << pointer->data;
+		output << pointer->data << ",";
 		pointer = pointer->succ;
 	}
+	output << "} ";
 	return output;
 }
 

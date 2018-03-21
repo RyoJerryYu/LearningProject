@@ -15,5 +15,9 @@ int ListFunctions() {
 	cout << List3 << endl;
 	cout << List3.size() << endl;
 	cout << List3.disordered() << endl;
+	List2.insertAft(List2.insertAsFirst(6), 9);
+	cout << List2 << endl;
+	List3.insertBfr(List3.insertAsLast(9), 10);
+	cout << List3 << endl;
 	return 2;
 }
