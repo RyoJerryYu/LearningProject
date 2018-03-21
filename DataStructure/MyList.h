@@ -28,8 +28,8 @@ public:
 	/*只读接口*/
 	int size() const;
 	int disordered() const;
-	Posi(T) headerPosi() const;
-	Posi(T) trailerPosi() const;
+	Posi(T) firstPosi() const;
+	Posi(T) lastPosi() const;
 
 	/*可写接口*/
 	Posi(T) insertAsFirst(T const&);
@@ -153,12 +153,12 @@ int MyList<T>::disordered()const {
 }
 
 template <typename T>
-Posi(T) MyList<T>::headerPosi() const {
+Posi(T) MyList<T>::firstPosi() const {
 	return header;
 }
 
 template <typename T>
-Posi(T) MyList<T>::trailerPosi() const {
+Posi(T) MyList<T>::lastPosi() const {
 	return trailer;
 }
 
@@ -166,17 +166,13 @@ Posi(T) MyList<T>::trailerPosi() const {
 /*********************Writable*********************/
 template <typename T>
 Posi(T) MyList<T>::insertAsFirst(T const& t) {
-	Posi(T) p = new MyListNode<T>(t, header, header->succ);
-	header->succ->pred = p;
-	header->succ = p;
+	Posi(T) p = insertAft(header, t);
 	return p;
 }
 
 template <typename T>
 Posi(T) MyList<T>::insertAsLast(T const& t) {
-	Posi(T) p = new MyListNode<T>(t, trailer->pred, trailer);
-	trailer->pred->succ = p;
-	trailer->pred = p;
+	Posi(T) p = insertBfr(trailer, t);
 	return p;
 }
 
@@ -185,6 +181,7 @@ Posi(T) MyList<T>::insertAft(Posi(T) p, T const& t) {
 	Posi(T) pi = new MyListNode<T>(t, p, p->succ);
 	p->succ->pred = pi;
 	p->succ = pi;
+	_size++;
 	return pi;
 }
 
@@ -193,6 +190,7 @@ Posi(T) MyList<T>::insertBfr(Posi(T) p, T const& t) {
 	Posi(T) pi = new MyListNode<T>(t, p->pred, p);
 	p->pred->succ = pi;
 	p->pred = pi;
+	_size++;
 	return pi;
 }
 
@@ -203,12 +201,14 @@ T MyList<T>::remove(Posi(T) p) {
 	p->pred->succ = p->succ;
 	p->succ->pred = p->pred;
 	delete p;
+	_size--;
 	return t;
 }
 
 template <typename T>
 int MyList<T>::removeAft(Posi(T) p, int n) {
 	int count = 0;
+	p = p->pred;
 	while (n > 0 && p->succ!=trailer) {
 		remove(p->succ);
 		n--;
@@ -233,12 +233,8 @@ int MyList<T>::removeBfr(Posi(T) p, int n) {
 /*********************Operator*********************/
 template <typename T>
 MyList<T>& MyList<T>::operator=(MyList<T>& A) {
-	Posi(T) pointer = header->succ;
-	while (pointer != trailer) {
-		pointer = pointer->succ;
-		delete pointer->pred;
-	}
-	pointer = header;
+	clear();
+	Posi(T) pointer = header;
 	Posi(T) pointerA = A.header;
 	_size = A._size;
 	for (int i = 0; i < _size; i++) {
