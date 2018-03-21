@@ -19,5 +19,10 @@ int ListFunctions() {
 	cout << List2 << endl;
 	List3.insertBfr(List3.insertAsLast(9), 10);
 	cout << List3 << endl;
+	Posi(int)p = List2.headerPosi();
+	cout << List2.remove(p->succ->succ) << endl;
+	cout << List2 << endl;
+	cout << List2.removeAft(p->succ->succ, 10) << endl;
+	cout << List2 << endl;
 	return 2;
 }

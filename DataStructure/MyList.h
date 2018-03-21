@@ -28,12 +28,17 @@ public:
 	/*只读接口*/
 	int size() const;
 	int disordered() const;
+	Posi(T) headerPosi() const;
+	Posi(T) trailerPosi() const;
 
 	/*可写接口*/
 	Posi(T) insertAsFirst(T const&);
 	Posi(T) insertAsLast(T const&);
 	Posi(T) insertAft(Posi(T), T const&);
 	Posi(T) insertBfr(Posi(T), T const&);
+	T remove(Posi(T));
+	int removeAft(Posi(T), int);
+	int removeBfr(Posi(T), int);
 
 	/*遍历接口*/
 	/*重载操作符*/
@@ -147,6 +152,16 @@ int MyList<T>::disordered()const {
 	return count;
 }
 
+template <typename T>
+Posi(T) MyList<T>::headerPosi() const {
+	return header;
+}
+
+template <typename T>
+Posi(T) MyList<T>::trailerPosi() const {
+	return trailer;
+}
+
 
 /*********************Writable*********************/
 template <typename T>
@@ -179,6 +194,38 @@ Posi(T) MyList<T>::insertBfr(Posi(T) p, T const& t) {
 	p->pred->succ = pi;
 	p->pred = pi;
 	return pi;
+}
+
+template <typename T>
+T MyList<T>::remove(Posi(T) p) {
+	if (p == header || p == trailer)return p->data;
+	T t = p->data;
+	p->pred->succ = p->succ;
+	p->succ->pred = p->pred;
+	delete p;
+	return t;
+}
+
+template <typename T>
+int MyList<T>::removeAft(Posi(T) p, int n) {
+	int count = 0;
+	while (n > 0 && p->succ!=trailer) {
+		remove(p->succ);
+		n--;
+		count++;
+	}
+	return count;
+}
+
+template <typename T>
+int MyList<T>::removeBfr(Posi(T) p, int n) {
+	int count = 0;
+	while (n > 0 && p->pred != header) {
+		remove(p->pred);
+		n--;
+		count++;
+	}
+	return count;
 }
 
 
