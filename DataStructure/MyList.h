@@ -2,6 +2,8 @@
 #define MY_LIST_H
 
 #include "MyListNode.h"
+#include <iostream>
+using namespace std;
 
 template <typename T>
 class MyList {
@@ -11,6 +13,7 @@ private:
 	Posi(T) trailer;
 protected:
 	/*内部函数*/
+	int clear();
 
 public:
 	/*构造函数*/
@@ -23,13 +26,34 @@ public:
 	~MyList();
 
 	/*只读接口*/
+	int size() const;
+	int disordered() const;
+
 	/*可写接口*/
 	/*遍历接口*/
 	/*重载操作符*/
 	MyList<T>& operator=(MyList<T>&);
+	template <typename T> friend ostream& operator<<(ostream&, MyList<T>&);
 };
 
 /*********************Protected*********************/
+template <typename T>
+int MyList<T>::clear() {
+	int count = 0;
+	Posi(T) pointer = header;
+	pointer = pointer->succ;
+	while (pointer != trailer) {
+		pointer = pointer->succ;
+		delete pointer->pred;
+		count++;
+	}
+	header->succ = trailer;
+	trailer->pred = header;
+	_size = 0;
+	return count;
+}
+
+
 /*********************MyList*********************/
 template <typename T>
 MyList<T>::MyList() {
@@ -94,17 +118,31 @@ MyList<T>::MyList(const MyList<T>& A) {
 
 template <typename T>
 MyList<T>::~MyList() {
-	Posi(T) pointer = header;
-	while (pointer != trailer) {
-		pointer = pointer->succ;
-		delete pointer->pred;
-	}
-	delete pointer->pred;
-	delete pointer;
+	clear();
+	delete header;
+	delete trailer;
 }
 
 
 /*********************OnlyRead*********************/
+template <typename T>
+int MyList<T>::size()const {
+	return _size;
+}
+
+template <typename T>
+int MyList<T>::disordered()const {
+	int count = 0;
+	Posi(T) p = header;
+	p = p->succ;
+	while (p != trailer) {
+		p = p->succ;
+		if (p != trailer && p->data < p->pred->data)count++;
+	}
+	return count;
+}
+
+
 /*********************Writable*********************/
 /*********************Traverse*********************/
 /*********************Operator*********************/
@@ -127,6 +165,17 @@ MyList<T>& MyList<T>::operator=(MyList<T>& A) {
 	}
 	pointer->succ = trailer;
 	trailer->pred = pointer;
+}
+
+template <typename T>
+ostream& operator<<(ostream& output, MyList<T>& it) {
+	Posi(T) pointer = it.header;
+	pointer = pointer->succ;
+	while (pointer != it.trailer) {
+		output << pointer->data;
+		pointer = pointer->succ;
+	}
+	return output;
 }
 
 
