@@ -156,12 +156,14 @@ int MyList<T>::disordered()const {
 
 template <typename T>
 Posi(T) MyList<T>::firstPosi() const {
-	return header;
+	if (header->succ == trailer)return NULL;
+	return header->succ;
 }
 
 template <typename T>
 Posi(T) MyList<T>::lastPosi() const {
-	return trailer;
+	if (trailer->pred == header)return NULL;
+	return trailer->pred;
 }
 
 template <typename T>

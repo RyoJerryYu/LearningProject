@@ -24,6 +24,9 @@
     <ClCompile Include="ListFunctions.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="StackFunctions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector.h">

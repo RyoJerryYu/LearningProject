@@ -1,6 +1,7 @@
 #include <iostream>
 #include "MyVector.h"
 #include "MyList.h"
+#include "MyStack.h"
 
 using namespace std;
 
@@ -11,6 +12,7 @@ int main() {
 		cout << "Input a number to run program(s):" << endl;
 		cout << "1:Programs of vector" << endl;
 		cout << "2:Programs of list" << endl;
+		cout << "3:Programs of stack" << endl;
 		cout << "If you input 0 or others, this program will be ended." << endl;
 		cin >> n;
 		cout << endl;
@@ -20,6 +22,9 @@ int main() {
 			break;
 		case 2:
 			ListFunctions();
+			break;
+		case 3:
+			StackFunctions();
 			break;
 		default:
 			cout << "Program end." << endl;
