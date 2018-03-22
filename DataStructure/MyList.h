@@ -30,6 +30,8 @@ public:
 	int disordered() const;
 	Posi(T) firstPosi() const;
 	Posi(T) lastPosi() const;
+	Posi(T) find(T t, int n, Posi(T))const;
+	Posi(T) find(T t, Posi(T), int n)const;
 
 	/*©ип╢╫с©з*/
 	Posi(T) insertAsFirst(T const&);
@@ -160,6 +162,28 @@ Posi(T) MyList<T>::firstPosi() const {
 template <typename T>
 Posi(T) MyList<T>::lastPosi() const {
 	return trailer;
+}
+
+template <typename T>
+Posi(T) MyList<T>::find(T t, int n, Posi(T) p) const {
+	while (n > 0) {
+		if (p == header)return NULL;
+		p = p->pred;
+		if (t == p->data)return p;
+		n--;
+	}
+	return NULL;
+}
+
+template <typename T>
+Posi(T) MyList<T>::find(T t, Posi(T) p, int n) const {
+	while (n > 0) {
+		if (p == trailer)return NULL;
+		p = p->succ;
+		if (t == p->data)return p;
+		n--;
+	}
+	return NULL;
 }
 
 
