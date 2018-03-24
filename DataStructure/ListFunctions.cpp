@@ -13,6 +13,8 @@ int ListFunctions() {
 	int str2[] = { 1,2,3,6,5 };
 	MyList<int> List3(str2, 0, 5);
 	cout << List3 << endl;
+	MyList<int> List4(List3);
+	cout << List4 << endl;
 	cout << List3.size() << endl;
 	cout << List3.disordered() << endl;
 	List2.insertAft(List2.insertAsFirst(6), 9);

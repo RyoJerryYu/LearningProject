@@ -85,10 +85,7 @@ MyList<T>::MyList(int size, const T& t) {
 	trailer = new MyListNode<T>;
 	Posi(T) pointer = header;
 	for (int i = 0; i < size; i++) {
-		pointer->succ = new MyListNode<T>;
-		pointer->succ->pred = pointer;
-		pointer = pointer->succ;
-		pointer->data = t;
+		pointer = pointer->insertAsSucc(t);
 	}
 	pointer->succ = trailer;
 	trailer->pred = pointer;
@@ -101,10 +98,7 @@ MyList<T>::MyList(const T* str, int lo, int hi) {
 	trailer = new MyListNode<T>;
 	Posi(T) pointer = header;
 	for (int i = 0; i < _size; i++) {
-		pointer->succ = new MyListNode<T>;
-		pointer->succ->pred = pointer;
-		pointer = pointer->succ;
-		pointer->data = str[i];
+		pointer = pointer->insertAsSucc(str[i]);
 	}
 	pointer->succ = trailer;
 	trailer->pred = pointer;
@@ -118,11 +112,8 @@ MyList<T>::MyList(const MyList<T>& A) {
 	Posi(T) pointer = header;
 	Posi(T) pointerA = A.header;
 	for (int i = 0; i < _size; i++) {
-		pointer->succ = new MyListNode<T>;
-		pointer->succ->pred = pointer;
-		pointer = pointer->succ;
 		pointerA = pointerA->succ;
-		pointer->data = pointerA->data;
+		pointer = pointer->insertAsSucc(pointerA->data);
 	}
 	pointer->succ = trailer;
 	trailer->pred = pointer;

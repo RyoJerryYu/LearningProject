@@ -47,11 +47,16 @@
     <ClInclude Include="MyQueue.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="MyBinTree.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="MyBinNode.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="MyBinTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="note.md">
+      <Filter>头文件</Filter>
+    </None>
   </ItemGroup>
 </Project>
