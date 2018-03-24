@@ -18,6 +18,7 @@ protected:
 	template <typename VST>
 	void visitAlongLBranch(BinPosi(T), VST&, MyStack<BinPosi(T)>&);
 public:
+	MyBinTree(BinPosi(T)x = NULL) :_root(x) {};
 	int size() { return _size; };
 	bool empty() { return !_root; };
 	BinPosi(T) root() { return _root; };
@@ -42,7 +43,7 @@ template <typename T>
 void MyBinTree<T>::updateHeightAbove(BinPosi(T) x) {
 	bool flag = true;
 	int t;
-	while (flag) {
+	while (flag&&x) {
 		t = x->height;
 		flag = (t != updateHeight(x));
 		x = x->parent;
@@ -73,20 +74,20 @@ BinPosi(T) MyBinTree<T>::insertAsRC(BinPosi(T) x, T const& t) {
 /**********traverse********/
 template <typename T>
 template <typename VST>
-void MyBinTree<T>::TravPre_I1(BinPosi(T) x, VST&& visit) {
-	MyStack<Posi(T)> posiStack;
+void MyBinTree<T>::travPre_I1(BinPosi(T) x, VST&& visit) {
+	MyStack<BinPosi(T)> posiStack;
 	posiStack.push(x);
 	while (!posiStack.empty()) {
 		x = posiStack.pop();
-		if (x.rChild)posiStack.push(x.rChild);
-		if (x.lChild)posiStack.push(x.lChild);
+		if (x->rChild)posiStack.push(x->rChild);
+		if (x->lChild)posiStack.push(x->lChild);
 		visit(x->data);
 	}
 }
 
 template <typename T>
 void showPre_I1(MyBinTree<T> & bintree) {
-	bintree.travPre_I1(Show<T>());
+	bintree.travPre_I1(bintree.root(),Show<T>());
 }
 
 template <typename T>
@@ -101,7 +102,7 @@ void MyBinTree<T>::visitAlongLBranch(BinPosi(T) x, VST& visit, MyStack<BinPosi(T
 
 template <typename T>
 template <typename VST>
-void MyBinTree<T>::travPre_I2(BinPosi(T) x.VST&& visit) {
+void MyBinTree<T>::travPre_I2(BinPosi(T) x,VST&& visit) {
 	MyStack<BinPosi(T)> posiStack;
 	posiStack.push(x);
 	while (!posiStack.empty()) {
@@ -112,7 +113,11 @@ void MyBinTree<T>::travPre_I2(BinPosi(T) x.VST&& visit) {
 
 template <typename T>
 void showPre_I2(MyBinTree<T> & bintree) {
-	bintree.travPre_I2(Show<T>());
+	bintree.travPre_I2(bintree.root(),Show<T>());
 }
+
+
+/*TestFunction*/
+int BinTreeFunctions();
 
 #endif //MY_BIN_TREE_H

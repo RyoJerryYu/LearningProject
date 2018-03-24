@@ -27,7 +27,7 @@ public:
 	~MyList();
 
 	/*Ö»¶Á½Ó¿Ú*/
-	int empty() const;
+	bool empty() const;
 	int size() const;
 	int disordered() const;
 	Posi(T) firstPosi() const;
@@ -134,8 +134,8 @@ MyList<T>::~MyList() {
 
 /*********************OnlyRead*********************/
 template <typename T>
-int MyList<T>::empty() const {
-	return _size;
+bool MyList<T>::empty() const {
+	return !_size;
 }
 
 template <typename T>

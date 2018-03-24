@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BinTreeFunctions.cpp" />
     <ClCompile Include="ListFunctions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="QueueFunctions.cpp" />
@@ -130,9 +131,6 @@
     <ClInclude Include="MyStack.h" />
     <ClInclude Include="MyVector.h" />
     <ClInclude Include="functor.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="note.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

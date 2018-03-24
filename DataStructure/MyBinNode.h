@@ -5,10 +5,12 @@
 
 template <typename T>
 struct BinNode {
-	BinPosi(T) parent, lChild=NULL, rChild=NULL;
+	BinPosi(T) parent; 
+	BinPosi(T) lChild = NULL;
+	BinPosi(T) rChild = NULL;
 	T data;
 	BinNode(T t, BinPosi(T) p) :data(t), parent(p) {};
-	int height;
+	int height = 0;
 	int size();
 	BinPosi(T) insertAsLC(T const&);
 	BinPosi(T) insertAsRC(T const&);

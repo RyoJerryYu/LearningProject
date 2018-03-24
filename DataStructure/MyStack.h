@@ -6,6 +6,7 @@
 template <typename T>
 class MyStack :public MyList<T> {
 public:
+	MyStack<T>& push(T& t);
 	MyStack<T>& push(T&& t);
 	T pop();
 	T& top();
@@ -13,6 +14,12 @@ public:
 
 template <typename T>
 MyStack<T>& MyStack<T>::push(T&& t) {
+	this->insertAsLast(t);
+	return *this;
+}
+
+template <typename T>
+MyStack<T>& MyStack<T>::push(T& t) {
 	this->insertAsLast(t);
 	return *this;
 }

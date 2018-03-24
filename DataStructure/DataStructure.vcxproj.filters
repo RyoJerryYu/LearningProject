@@ -30,6 +30,9 @@
     <ClCompile Include="QueueFunctions.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="BinTreeFunctions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector.h">
@@ -56,10 +59,5 @@
     <ClInclude Include="functor.h">
       <Filter>头文件</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="note.md">
-      <Filter>头文件</Filter>
-    </None>
   </ItemGroup>
 </Project>

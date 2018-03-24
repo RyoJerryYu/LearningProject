@@ -3,6 +3,7 @@
 #include "MyList.h"
 #include "MyStack.h"
 #include "MyQueue.h"
+#include "MyBinTree.h"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ int main() {
 		cout << "2:Programs of list" << endl;
 		cout << "3:Programs of stack" << endl;
 		cout << "4:Programs of queue" << endl;
+		cout << "5:Programs of binary tree" << endl;
 		cout << "If you input 0 or others, this program will be ended." << endl;
 		cin >> n;
 		cout << endl;
@@ -30,6 +32,9 @@ int main() {
 			break;
 		case 4:
 			QueueFunctions();
+			break;
+		case 5:
+			BinTreeFunctions();
 			break;
 		default:
 			cout << "Program end." << endl;
