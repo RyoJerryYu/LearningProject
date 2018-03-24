@@ -2,8 +2,6 @@
 #define MY_STACK_H
 
 #include "MyList.h"
-#include <iostream>
-using namespace std;
 
 template <typename T>
 class MyStack :public MyList<T> {
@@ -21,9 +19,7 @@ MyStack<T>& MyStack<T>::push(T&& t) {
 
 template <typename T>
 T MyStack<T>::pop() {
-	T t = this->lastPosi()->data;
-	this->remove(this->lastPosi());
-	return t;
+	return this->remove(this->lastPosi());
 }
 
 template <typename T>

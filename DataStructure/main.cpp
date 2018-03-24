@@ -2,6 +2,7 @@
 #include "MyVector.h"
 #include "MyList.h"
 #include "MyStack.h"
+#include "MyQueue.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ int main() {
 		cout << "1:Programs of vector" << endl;
 		cout << "2:Programs of list" << endl;
 		cout << "3:Programs of stack" << endl;
+		cout << "4:Programs of queue" << endl;
 		cout << "If you input 0 or others, this program will be ended." << endl;
 		cin >> n;
 		cout << endl;
@@ -25,6 +27,9 @@ int main() {
 			break;
 		case 3:
 			StackFunctions();
+			break;
+		case 4:
+			QueueFunctions();
 			break;
 		default:
 			cout << "Program end." << endl;

@@ -53,5 +53,5 @@ int VectorFunctions() {
 	cout << Vector6.search(3) << endl;
 	show(Vector6);
 
-	return 1;
+	return 0;
 }

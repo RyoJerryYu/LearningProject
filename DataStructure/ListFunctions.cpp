@@ -27,5 +27,5 @@ int ListFunctions() {
 	p = List3.firstPosi();
 	p = List3.find(10, p, 7);
 	cout << p << endl;
-	return 2;
+	return 0;
 }
