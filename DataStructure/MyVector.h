@@ -2,6 +2,7 @@
 #define MY_VECTOR_H
 
 #include <iostream>
+#include "functor.h"
 using namespace std;
 
 typedef int Rank;
@@ -58,7 +59,7 @@ public:
 
 	/*遍历接口*/;
 	template <typename VST>
-	void traverse(VST &);
+	void traverse(VST &&);
 
 	/*重载操作符*/
 	T& operator[](Rank)const;
@@ -359,20 +360,14 @@ void MyVector<T>::mergesort() {
 /*********************Traverse*********************/
 template <typename T>
 template <typename VST>//前一个是类模板，后一个是函数模板，不能合并！！
-void MyVector<T>::traverse(VST & visit) {
+void MyVector<T>::traverse(VST && visit) {
 	for (int i = 0; i < _size; i++)visit(_elem[i]);
 }
 
 template <typename T>
-struct Show {
-	virtual void operator()(T & t) { cout << t << endl; }
-};
-
-template <typename T>
 void show(MyVector<T> & vector) {
-	Show<T> show;
-	vector.traverse(show);
-}
+	vector.traverse(Show<T>());
+};
 
 
 /*********************Operator*********************/

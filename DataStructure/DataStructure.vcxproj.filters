@@ -53,6 +53,9 @@
     <ClInclude Include="MyBinTree.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="functor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="note.md">

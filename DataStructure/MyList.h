@@ -2,6 +2,7 @@
 #define MY_LIST_H
 
 #include "MyListNode.h"
+#include "functor.h"
 #include <iostream>
 using namespace std;
 
@@ -26,6 +27,7 @@ public:
 	~MyList();
 
 	/*只读接口*/
+	int empty() const;
 	int size() const;
 	int disordered() const;
 	Posi(T) firstPosi() const;
@@ -43,6 +45,9 @@ public:
 	int removeBfr(Posi(T), int);
 
 	/*遍历接口*/
+	template <typename VST>
+	void traverse(VST &&);
+
 	/*重载操作符*/
 	MyList<T>& operator=(MyList<T>&);
 	template <typename T> friend ostream& operator<<(ostream&, MyList<T>&);
@@ -128,6 +133,11 @@ MyList<T>::~MyList() {
 
 
 /*********************OnlyRead*********************/
+template <typename T>
+int MyList<T>::empty() const {
+	return _size;
+}
+
 template <typename T>
 int MyList<T>::size()const {
 	return _size;
@@ -247,6 +257,22 @@ int MyList<T>::removeBfr(Posi(T) p, int n) {
 
 
 /*********************Traverse*********************/
+template <typename T>
+template <typename VST>
+void MyList<T>::traverse(VST && visit) {
+	Posi(T) p = header->succ;
+	while (p != trailer) {
+		visit(p->data);
+		p = p->succ;
+	}
+}
+
+template <typename T>
+void show(MyList<T> & list) {
+	list.traverse(Show<T>());
+}
+
+
 /*********************Operator*********************/
 template <typename T>
 MyList<T>& MyList<T>::operator=(MyList<T>& A) {
