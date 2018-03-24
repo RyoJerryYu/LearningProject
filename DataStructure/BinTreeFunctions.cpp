@@ -23,7 +23,11 @@ int BinTreeFunctions() {
 	BinTree1.insertAsLC(x, 10);
 	x = BinTree1.root();
 	cout << BinTree1.size() << endl;
+	cout << "showPre_I1" << endl;
 	showPre_I1(BinTree1);
+	cout << "showPre_I2" << endl;
 	showPre_I2(BinTree1);
+	cout << "showIn_I2" << endl;
+	showIn_I2(BinTree1);
 	return 0;
 }
