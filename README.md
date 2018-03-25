@@ -1,18 +1,13 @@
 # LearningProject
 my learning project, containing codes I learning whitch was written by VS2017.  
-*  `Project1`: A program that succeed compairing two strings to find a substring that has maximum length.  
 *  `DataStructure`: My program to exersice data structure.  
-	`Vector` part was finished.
-
-# 勉強プログラム 
-私の勉強プログラムですが、私の勉強している、VS2017に作成させたコードが含まれています。  
-*  `Project1`は、二つのシーケンスを比べし、最大のサブシーケンスを示します。  
-*  `DataStructure`は、私のデータ構成を勉強するために、作成するプログラムです。  
-	`Vector`部分は完了します。  
-私は日本語を勉強していますが、もし間違い点がありますなら、どうぞ遠慮なくてご指摘ください。  
+	`Vector` `List` `Stack` `Queue` `BinTree` part was finished.
+*  `Algorithm`: This part haven't start to complete.
+*  `Wasted`: This part included some codes that deleted from other parts but stull have evulate.
 
 # 学习项目
 这是我的学习项目，包含了我正在学习与练习的，用VS2017写的代码。  
-*  `Project1`：能完成序列比对，并输出最长子序列的程序。  
 *  `DataStructure`：我练习数据结构用的程序。  
-	`Vector`部分完成。
+	`Vector` `List` `Stack` `Queue` `BinTree`部分完成。
+*  `Algorithm`：这一部分还未动工。
+*  `Wasted`: 这一部分包含了从其他部分删除出来的代码。我认为这些代码仍有保留的价值。

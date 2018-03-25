@@ -13,9 +13,10 @@ template <typename Tv> struct MyVertex {
 	int dTime, fTime;
 	int parent;
 	int priority;
+	MyVertex() :data(NULL) {};
 	MyVertex(Tv const& t) :
 		data(t), inDegree(0), outDegree(0), 
-		status(UNDISCOVERD), 
+		status(UNDISCOVERED), 
 		dTime(-1), fTime(-1), 
 		parent(-1), priority(INT_MAX) {};
 };
@@ -121,14 +122,14 @@ void MyGraphMatrix<Tv, Te>::insert(Tv const& vertex) {
 
 template <typename Tv,typename Te>
 Tv MyGraphMatrix<Tv, Te>::remove(int i) {
-	for (int j = 0; j < n; j++) {
+	for (int j = 0; j < this->n; j++) {
 		if(exists(i, j)) {
 			delete E[i][j];
 			inDegree(j)--;
 		}
 	}
-	E.remove(i); n--;
-	for (int j = 0; j < n; j++) {
+	E.remove(i); this->n--;
+	for (int j = 0; j < this->n; j++) {
 		if (exists(j, i)) {
 			delete E[j][i];
 			outDegree(j)--;
@@ -144,7 +145,7 @@ Tv MyGraphMatrix<Tv, Te>::remove(int i) {
 /*********Functions of Edge*********/
 template <typename Tv,typename Te>
 bool MyGraphMatrix<Tv, Te>::exists(int i, int j) {
-	return (0 <= i && i < n && 0 <= j && j < n && E[i][j] != NULL);
+	return (0 <= i && i < this->n && 0 <= j && j < this->n && E[i][j] != NULL);
 }
 
 template <typename Tv,typename Te>
