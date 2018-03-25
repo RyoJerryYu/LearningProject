@@ -109,7 +109,13 @@ public:
 
 	/*±éÀú*/
 	template <typename VST>
-	void BFS(int v, int& clock, VST&&visit);
+	void BFS(int v, int& clock, VST&visit);
+	template <typename VST>
+	void bfs(VST&& visit);
+	template <typename VST>
+	void DFS(int v, int& clock, VST&visit);
+	template <typename VST>
+	void dfs(VST&& visit);
 };
 
 
@@ -182,7 +188,7 @@ Te MyGraphMatrix<Tv, Te>::remove(int i, int j) {
 /*********traverse********/
 template <typename Tv,typename Te>
 template <typename VST>
-void MyGraphMatrix<Tv, Te>::BFS(int v, int& clock, VST&& visit) {
+void MyGraphMatrix<Tv, Te>::BFS(int v, int& clock, VST& visit) {
 	MyQueue<int> Q;
 	Q.enqueue(v);
 	status(v) = DISCOVERED;
@@ -203,12 +209,65 @@ void MyGraphMatrix<Tv, Te>::BFS(int v, int& clock, VST&& visit) {
 		}
 		status(v) = VISITED;
 	}
-	this->reset();
 }
 
 template <typename Tv,typename Te>
-void travBFS(MyGraphMatrix<Tv, Te>& graph,int& clock) {
-	graph.BFS(0, clock, Show<Tv>());
+template <typename VST>
+void MyGraphMatrix<Tv, Te>::bfs(VST&& visit) {
+	this->reset();
+	int clock = 0;
+	for (int v = 0; v < this->n; v++) {
+		if (status(v) == UNDISCOVERED) {
+			BFS(v, clock, visit);
+		}
+	}
+}
+
+template <typename Tv,typename Te>
+void travBFS(MyGraphMatrix<Tv, Te>& graph) {
+	graph.bfs(Show<Tv>());
+}
+
+template <typename Tv,typename Te>
+template <typename VST>
+void MyGraphMatrix<Tv, Te>::DFS(int v, int& clock, VST& visit) {
+	dTime(v) = clock++;
+	status(v) = DISCOVERED;
+	visit(V(v).data);
+	for (int u = firstNbr(v); -1 < u; u = nextNbr(v, u)) {
+		switch (status(u)) {
+		case UNDISCOVERED:
+			status(v, u) = TREE;
+			parent(u) = v;
+			DFS(u, clock, visit);
+			break;
+		case DISCOVERED:
+			status(v, u) = BACKWARD;
+			break;
+		default:
+			status(v, u) = (dTime(v) < dTime(u)) ? FORWARD : CROSS;
+			break;
+		}
+	}
+	status(v) = VISITED;
+	fTime(v) = clock++;
+}
+
+template <typename Tv,typename Te>
+template <typename VST>
+void MyGraphMatrix<Tv, Te>::dfs(VST&& visit) {
+	this->reset();
+	int clock = 0;
+	for (int v = 0; v < this->n; v++) {
+		if (status(v) == UNDISCOVERED) {
+			BFS(v, clock, visit);
+		}
+	}
+}
+
+template <typename Tv,typename Te>
+void travDFS(MyGraphMatrix<Tv, Te>& graph) {
+	graph.dfs(Show<Tv>());
 }
 
 

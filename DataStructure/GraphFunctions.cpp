@@ -10,6 +10,7 @@ int GraphFunctions() {
 	Graph1.insert('B', 1, 1, 2);
 	Graph1.insert('C', 2, 0, 2);
 	int clock = 0;
-	travBFS(Graph1, clock);
+	travBFS(Graph1);
+	travDFS(Graph1);
 	return 0;
 }
