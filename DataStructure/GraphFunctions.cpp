@@ -9,5 +9,7 @@ int GraphFunctions() {
 	Graph1.insert('A', 1, 0, 1);
 	Graph1.insert('B', 1, 1, 2);
 	Graph1.insert('C', 2, 0, 2);
+	int clock = 0;
+	travBFS(Graph1, clock);
 	return 0;
 }

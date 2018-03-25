@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include "MyVector.h"
+#include "MyStack.h"
+#include "MyQueue.h"
+#include "functor.h"
 using namespace std;
 
 typedef enum { UNDISCOVERED, DISCOVERED, VISITED } VStatus;
@@ -87,8 +90,8 @@ public:
 	int& parent(int i) { return V[i].parent; };
 	int& priority(int i) { return V[i].priority; };
 
-	int nexNbr(int i, int j);
-	int firstNbr(int i) { return nextNbr(i, n); };
+	int nextNbr(int i, int j);
+	int firstNbr(int i) { return nextNbr(i, this->n); };
 
 	void insert(Tv const& vertex);
 	Tv remove(int i);
@@ -102,13 +105,18 @@ public:
 
 	void insert(Te const& edge, int weight, int i, int j);
 	Te remove(int i, int j);
+
+
+	/*±éÀú*/
+	template <typename VST>
+	void BFS(int v, int& clock, VST&&visit);
 };
 
 
 /*********Functions of Vertex*********/
 template<typename Tv,typename Te>
-int MyGraphMatrix<Tv, Te>::nexNbr(int i, int j) {
-	while ((-1 < j) && !exist(i, --j));
+int MyGraphMatrix<Tv, Te>::nextNbr(int i, int j) {
+	while ((-1 < j) && !exists(i, --j));
 	return j;
 }
 
@@ -128,7 +136,7 @@ Tv MyGraphMatrix<Tv, Te>::remove(int i) {
 			inDegree(j)--;
 		}
 	}
-	E.remove(i); this->n--;
+	E.remove(i);
 	for (int j = 0; j < this->n; j++) {
 		if (exists(j, i)) {
 			delete E[j][i];
@@ -136,6 +144,7 @@ Tv MyGraphMatrix<Tv, Te>::remove(int i) {
 		}
 		E[j].remove(i);
 	}
+	this->n--;
 	Tv tv = vertex(i);
 	V.remove(i);
 	return tv;
@@ -167,6 +176,39 @@ Te MyGraphMatrix<Tv, Te>::remove(int i, int j) {
 	V[i].outDegree--;
 	V[j].inDegree--;
 	return te;
+}
+
+
+/*********traverse********/
+template <typename Tv,typename Te>
+template <typename VST>
+void MyGraphMatrix<Tv, Te>::BFS(int v, int& clock, VST&& visit) {
+	MyQueue<int> Q;
+	Q.enqueue(v);
+	status(v) = DISCOVERED;
+	while (!Q.empty()) {
+		v = Q.dequeue();
+		dTime(v) = clock++;
+		visit(V[v].data);
+		for (int u = firstNbr(v); -1 < u; u = nextNbr(v, u)) {
+			if (status(u) == UNDISCOVERED) {
+				Q.enqueue(u);
+				status(u) = DISCOVERED;
+				parent(u) = v;
+				status(v, u) = TREE;
+			}
+			else {
+				status(v, u) = CROSS;
+			}
+		}
+		status(v) = VISITED;
+	}
+	this->reset();
+}
+
+template <typename Tv,typename Te>
+void travBFS(MyGraphMatrix<Tv, Te>& graph,int& clock) {
+	graph.BFS(0, clock, Show<Tv>());
 }
 
 
