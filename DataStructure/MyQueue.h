@@ -7,6 +7,7 @@ template <typename T>
 class MyQueue :public MyList<T> {
 public:
 	MyQueue<T>& enqueue(T&& t);
+	MyQueue<T>& enqueue(T& t);
 	T dequeue();
 	T& rear();
 	T& front();
@@ -14,6 +15,12 @@ public:
 
 template <typename T>
 MyQueue<T>& MyQueue<T>::enqueue(T&& t) {
+	this->insertAsLast(t);
+	return *this;
+}
+
+template <typename T>
+MyQueue<T>& MyQueue<T>::enqueue(T& t) {
 	this->insertAsLast(t);
 	return *this;
 }

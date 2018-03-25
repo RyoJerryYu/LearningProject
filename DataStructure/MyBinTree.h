@@ -4,6 +4,7 @@
 #include "MyBinNode.h"
 #include "functor.h"
 #include "MyStack.h"
+#include "MyQueue.h"
 #include <iostream>
 using namespace std;
 
@@ -15,9 +16,11 @@ protected:
 	virtual int updateHeight(BinPosi(T));
 	void updateHeightAbove(BinPosi(T));
 	int stature(BinPosi(T) p) { return p ? p->height : -1; };
+	/*±éÀú×Ó³ÌÐò*/
 	template <typename VST>
 	void visitAlongLBranch(BinPosi(T), VST&, MyStack<BinPosi(T)>&);
 	void goAlongLBranch(BinPosi(T), MyStack<BinPosi(T)>&);
+	void deepAlongLBranch(BinPosi(T), MyStack<BinPosi(T)>&);
 public:
 	MyBinTree(BinPosi(T)x = NULL) :_root(x) {};
 	int size() { return _size; };
@@ -35,6 +38,10 @@ public:
 	void travPre_I2(BinPosi(T), VST&&);
 	template <typename VST>
 	void travIn_I2(BinPosi(T), VST&&);
+	template <typename VST>
+	void travPost_I2(BinPosi(T), VST&&);
+	template <typename VST>
+	void travLevel_I1(BinPosi(T), VST&&);
 };
 
 template <typename T>
@@ -142,6 +149,53 @@ void MyBinTree<T>::travIn_I2(BinPosi(T) x, VST&& visit) {
 template <typename T>
 void showIn_I2(MyBinTree<T> & bintree) {
 	bintree.travIn_I2(bintree.root(), Show<T>());
+}
+
+template <typename T>
+void MyBinTree<T>::deepAlongLBranch(BinPosi(T) x, MyStack<BinPosi(T)>& posiStack) {
+	while (x) {
+		posiStack.push(x);
+		x = (x->lChild) ? (x->lChild) : (x->rChild);
+	}
+}
+
+template <typename T>
+template <typename VST>
+void MyBinTree<T>::travPost_I2(BinPosi(T) x, VST&& visit) {
+	MyStack<BinPosi(T)> posiStack;
+	deepAlongLBranch(x, posiStack);
+	while (!posiStack.empty()) {
+		x = posiStack.pop();
+		while (x->parent && x == x->parent->rChild) {
+			visit(x->data);
+			x = posiStack.pop();
+		}
+		if (x->parent)deepAlongLBranch(x->parent->rChild, posiStack);
+		visit(x->data);
+	}
+}
+
+template <typename T>
+void showPost_I2(MyBinTree<T> & bintree) {
+	bintree.travPost_I2(bintree.root(), Show<T>());
+}
+
+template <typename T>
+template <typename VST>
+void MyBinTree<T>::travLevel_I1(BinPosi(T) x, VST&& visit) {
+	MyQueue<BinPosi(T)> posiQueue;
+	posiQueue.enqueue(x);
+	while (!posiQueue.empty()) {
+		x = posiQueue.dequeue();
+		if (x->lChild)posiQueue.enqueue(x->lChild);
+		if (x->rChild)posiQueue.enqueue(x->rChild);
+		visit(x->data);
+	}
+}
+
+template <typename T>
+void showLevel_I1(MyBinTree<T>& bintree) {
+	bintree.travLevel_I1(bintree.root(), Show<T>());
 }
 
 

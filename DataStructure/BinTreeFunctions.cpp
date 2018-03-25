@@ -29,5 +29,9 @@ int BinTreeFunctions() {
 	showPre_I2(BinTree1);
 	cout << "showIn_I2" << endl;
 	showIn_I2(BinTree1);
+	cout << "showPost_I2" << endl;
+	showPost_I2(BinTree1);
+	cout << "showLevel_I1" << endl;
+	showLevel_I1(BinTree1);
 	return 0;
 }
