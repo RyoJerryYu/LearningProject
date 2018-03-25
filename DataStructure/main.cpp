@@ -4,6 +4,7 @@
 #include "MyStack.h"
 #include "MyQueue.h"
 #include "MyBinTree.h"
+#include "MyGraph.h"
 
 using namespace std;
 
@@ -17,6 +18,7 @@ int main() {
 		cout << "3:Programs of stack" << endl;
 		cout << "4:Programs of queue" << endl;
 		cout << "5:Programs of binary tree" << endl;
+		cout << "6:Programs of graph" << endl;
 		cout << "If you input 0 or others, this program will be ended." << endl;
 		cin >> n;
 		cout << endl;
@@ -35,6 +37,9 @@ int main() {
 			break;
 		case 5:
 			BinTreeFunctions();
+			break;
+		case 6:
+			GraphFunctions();
 			break;
 		default:
 			cout << "Program end." << endl;

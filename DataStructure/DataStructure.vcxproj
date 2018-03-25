@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BinTreeFunctions.cpp" />
+    <ClCompile Include="GraphFunctions.cpp" />
     <ClCompile Include="ListFunctions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="QueueFunctions.cpp" />
