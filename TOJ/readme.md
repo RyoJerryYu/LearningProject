@@ -18,15 +18,15 @@
 
 * Input
 
-	5 2
-	1 3 7 9 11
-	4 6
-	7 12
+		5 2
+		1 3 7 9 11
+		4 6
+		7 12
 	
 * Output
 
-	0
-	3
+		0
+		3
 	
 ## Restrictions
 
@@ -62,21 +62,21 @@
 
 * Input
 
-	ACCBA
-	5
-	1 B
-	0 A
-	2 B
-	4 C
-	0 A
+		ACCBA
+		5
+		1 B
+		0 A
+		2 B
+		4 C
+		0 A
 	
 * Output
 
-	ABCCBA
-	AABCCBA
-	AABBCCBA
-	-
-	A
+		ABCCBA
+		AABCCBA
+		AABBCCBA
+		-
+		A
 	
 ## Restrictions
 
@@ -111,14 +111,14 @@
 
 * Input
 
-	3
-	2 2
-	4 3
-	5 1
+		3
+		2 2
+		4 3
+		5 1
 	
 * Output
 
-	1
+		1
 	
 ## Restrictions
 
@@ -159,33 +159,33 @@
 
 * Input
 
-	5 2
-	1 2 3 5 4
+		5 2
+		1 2 3 5 4
 	
 * Output
 
-	push
-	pop
-	push
-	pop
-	push
-	pop
-	push
-	push
-	pop
-	pop
+		push
+		pop
+		push
+		pop
+		push
+		pop
+		push
+		push
+		pop
+		pop
 	
 ## Example 2
 
 * Input
 
-	5 5
-	3 1 2 4 5
-	
+		5 5
+		3 1 2 4 5
+		
 * Output
 
-	No
-	
+		No
+		
 ## Restrictions
 
 * 1 <= n <= 1,600,000
@@ -217,13 +217,13 @@
 
 * Input
 
-	5
-	1 2 4 5 3
-	4 5 2 3 1
+		5
+		1 2 4 5 3
+		4 5 2 3 1
 	
 * Output
 
-	4 2 5 1 3
+		4 2 5 1 3
 	
 ## Restrictions
 
@@ -259,14 +259,14 @@
 
 * Input
 
-	4 3
-	1 4
-	2 4
-	4 3
+		4 3
+		1 4
+		2 4
+		4 3
 	
 * Output
 
-	3
+		3
 	
 ## Restrictions
 
