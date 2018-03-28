@@ -9,13 +9,17 @@
 · The number of points in S lying inside each of the m query intervals.
 ## Example
 · Input
+
 	5 2
 	1 3 7 9 11
 	4 6
 	7 12
+	
 · Output
+
 	0
 	3
+	
 ## Restrictions
 · 0 <= n, m <= 5 * 10^5
 · For each query interval [a, b], it is guaranteed that a <= b.
@@ -39,6 +43,7 @@
 · Specially, "-" stands for an empty sequence.
 ## Example
 · Input
+
 	ACCBA
 	5
 	1 B
@@ -46,12 +51,15 @@
 	2 B
 	4 C
 	0 A
+	
 · Output
+
 	ABCCBA
 	AABCCBA
 	AABBCCBA
 	-
 	A
+	
 ## Restrictions
 · 0 <= n <= 10^4
 · 0 <= length of the initial sequence <= 10^4
@@ -72,12 +80,16 @@
 · ( For every lighthouses, X coordinates won't be the same , Y coordinates won't be the same )
 ## Example
 · Input
+
 	3
 	2 2
 	4 3
 	5 1
+	
 · Output
+
 	1
+	
 ## Restrictions
 · For 90% test cases: 1 <= n <= 3 * 105
 · For 95% test cases: 1 <= n <= 106
@@ -104,9 +116,12 @@
 · If the sequence is infeasible, output a “no”. 
 ## Example 1
 · Input
+
 	5 2
 	1 2 3 5 4
+	
 · Output
+
 	push
 	pop
 	push
@@ -117,12 +132,17 @@
 	push
 	pop
 	pop
+	
 ## Example 2
 · Input
+
 	5 5
 	3 1 2 4 5
+	
 · Output
+
 	No
+	
 ## Restrictions
 · 1 <= n <= 1,600,000
 · 0 <= m <= 1,600,000
@@ -143,11 +163,15 @@
 · The inorder traversal sequence of the given binary tree in one line.
 ## Example
 · Input
+
 	5
 	1 2 4 5 3
 	4 5 2 3 1
+	
 · Output
+
 	4 2 5 1 3
+	
 ## Restrictions
 · For 95% of the estimation, 1 <= n <= 1,000,00
 · For 100% of the estimation, 1 <= n <= 4,000,000
@@ -169,12 +193,16 @@
 · Output maximum number of villages Shrek can pass by.
 ## Example
 · Input
+
 	4 3
 	1 4
 	2 4
 	4 3
+	
 · Output
+
 	3
+	
 ## Restrictions
 · 1 <= n <= 1,000,000
 · 0 <= m <= 1,000,000
