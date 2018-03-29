@@ -6,20 +6,13 @@
 #define BSTPosi(T) BinNode<MyEntry<T> >*
 
 template <typename T>
-class MyBST :protected MyBinTree<MyEntry<T> > {
+class MyBST :public MyBinTree<MyEntry<T> > {
 public:
 	MyBST() :MyBinTree<MyEntry<T> >(), _hot(NULL) {};
 	virtual BSTPosi(T)& search(const MyEntry<T>&);
 	virtual BSTPosi(T) insert(const int&, const T&);
 	virtual BSTPosi(T) insert(const MyEntry<T>&&);
 	virtual bool remove(const MyEntry<T>&&);
-	using MyBinTree<MyEntry<T> >::size;
-	using MyBinTree<MyEntry<T> >::empty;
-	using MyBinTree<MyEntry<T> >::travPre_I1;
-	using MyBinTree<MyEntry<T> >::travPre_I2;
-	using MyBinTree<MyEntry<T> >::travIn_I2;
-	using MyBinTree<MyEntry<T> >::travPost_I2;
-	using MyBinTree<MyEntry<T> >::travLevel_I1;
 protected:
 	BSTPosi(T) _hot;
 	BSTPosi(T) removeAt(BSTPosi(T)&);
@@ -59,7 +52,7 @@ bool MyBST<T>::remove(const MyEntry<T>&& t) {
 	if (!x)return false;
 	removeAt(x);
 	this->_size--;
-	updateHeightAbove(_hot);//_hot aim to parent of the point it truly remove.
+	this->updateHeightAbove(_hot);//_hot aim to parent of the point it truly remove.
 	return true;
 }
 

@@ -98,6 +98,8 @@ void MyBinTree<T>::travPre_I1(BinPosi(T) x, VST&& visit) {
 
 template <typename T>
 void showPre_I1(MyBinTree<T> & bintree) {
+	cout << endl;
+	cout << "show Pre" << endl;
 	bintree.travPre_I1(bintree.root(),Show<T>());
 }
 
@@ -124,6 +126,8 @@ void MyBinTree<T>::travPre_I2(BinPosi(T) x,VST&& visit) {
 
 template <typename T>
 void showPre_I2(MyBinTree<T> & bintree) {
+	cout << endl;
+	cout << "show Pre" << endl;
 	bintree.travPre_I2(bintree.root(),Show<T>());
 }
 
@@ -149,6 +153,8 @@ void MyBinTree<T>::travIn_I2(BinPosi(T) x, VST&& visit) {
 
 template <typename T>
 void showIn_I2(MyBinTree<T> & bintree) {
+	cout << endl;
+	cout << "show In" << endl;
 	bintree.travIn_I2(bintree.root(), Show<T>());
 }
 
@@ -178,6 +184,8 @@ void MyBinTree<T>::travPost_I2(BinPosi(T) x, VST&& visit) {
 
 template <typename T>
 void showPost_I2(MyBinTree<T> & bintree) {
+	cout << endl;
+	cout << "show Post" << endl;
 	bintree.travPost_I2(bintree.root(), Show<T>());
 }
 
@@ -196,6 +204,8 @@ void MyBinTree<T>::travLevel_I1(BinPosi(T) x, VST&& visit) {
 
 template <typename T>
 void showLevel_I1(MyBinTree<T>& bintree) {
+	cout << endl;
+	cout << "show Level" << endl;
 	bintree.travLevel_I1(bintree.root(), Show<T>());
 }
 
