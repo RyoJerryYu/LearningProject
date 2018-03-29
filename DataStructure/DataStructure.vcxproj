@@ -124,6 +124,7 @@
     <ClCompile Include="VectorFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MyBST.h" />
     <ClInclude Include="MyEntry.h" />
     <ClInclude Include="MyGraph.h" />
     <ClInclude Include="MyBinNode.h" />

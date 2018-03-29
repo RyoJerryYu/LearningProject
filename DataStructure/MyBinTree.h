@@ -44,6 +44,7 @@ public:
 	void travLevel_I1(BinPosi(T), VST&&);
 };
 
+/*********Protected*********/
 template <typename T>
 int MyBinTree<T>::updateHeight(BinPosi(T) x) {
 	return x->height = 1 + (stature(x->lChild) > stature(x->rChild) ? stature(x->lChild) : stature(x->rChild));

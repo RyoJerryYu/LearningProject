@@ -36,5 +36,13 @@ BinPosi(T) BinNode<T>::insertAsRC(T const& t) {
 	return rChild = new BinNode(t, this);
 }
 
+template <typename T>
+BinPosi(T) BinNode<T>::succ() {
+	if (!rChild)return NULL;
+	BinPosi(T) x = rChild;
+	while (x->lChild)x = x->lChild;
+	return x;
+}
+
 
 #endif //MY_BIN_NODE_H
