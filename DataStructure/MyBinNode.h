@@ -9,8 +9,8 @@ struct BinNode {
 	BinPosi(T) lChild = NULL;
 	BinPosi(T) rChild = NULL;
 	T data;
-	BinNode(T t, BinPosi(T) p) :data(t), parent(p) {};
 	int height = 0;
+	BinNode(T t, BinPosi(T) p) :data(t), parent(p) {};
 	int size();
 	BinPosi(T) insertAsLC(T const&);
 	BinPosi(T) insertAsRC(T const&);

@@ -14,7 +14,7 @@ public:
 	virtual bool remove(const MyEntry<T>&&);
 protected:
 	BSTPosi(T) _hot;
-	BSTPosi(T) removeAt(BSTPosi(T));
+	BSTPosi(T) removeAt(BSTPosi(T)&);
 };
 /*********search********/
 template <typename T>
@@ -55,8 +55,21 @@ bool MyBST<T>::remove(const MyEntry<T>&& t) {
 }
 
 template <typename T>
-BSTPosi(T) MyBST<T>::removeAt(BSTPosi(T)) {
-
+BSTPosi(T) MyBST<T>::removeAt(BSTPosi(T)& x) {
+	BSTPosi(T)w = x;
+	BSTPosi(T) succ = NULL;
+	if (!x->lChild)succ = x = x->rChild;
+	else if (!x->rChild)succ = x = x->lChild;
+	else {
+		w = x->succ();//w could never be NULL because x have rChild.
+		x->data = exchange(w->data, x->data);
+		BSTPosi(T) u = w->parent;//w->parent could never be NULL
+		(u == x ? u->rChild : u->lChild) = succ = w->rChild;//w->rChild could be NULL.
+	}
+	_hot = w->parent;
+	if (succ)succ->parent = _hot;
+	delete w;
+	return succ;
 }
 
 
