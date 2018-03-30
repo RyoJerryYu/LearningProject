@@ -16,7 +16,17 @@ public:
 protected:
 	BSTPosi(T) _hot;
 	BSTPosi(T) removeAt(BSTPosi(T)&);
+	BSTPosi(T) rotateAt(BSTPosi(T)&);
+	BSTPosi(T) connet34(BSTPosi(T), BSTPosi(T), BSTPosi(T), BSTPosi(T), BSTPosi(T), BSTPosi(T), BSTPosi(T));
 };
+
+/*********protected********/
+template <typename T>
+BSTPosi(T) MyBST<T>::connet34(BSTPosi(T) a, BSTPosi(T) b, BSTPosi(T) c, BSTPosi(T) T0, BSTPosi(T) T1, BSTPosi(T) T2, BSTPosi(T) T3) {
+	
+}
+
+
 /*********search********/
 template <typename T>
 BSTPosi(T)& MyBST<T>::search(const MyEntry<T>& t) {

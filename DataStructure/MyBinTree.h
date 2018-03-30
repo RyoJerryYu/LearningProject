@@ -16,6 +16,7 @@ protected:
 	virtual int updateHeight(BinPosi(T));
 	void updateHeightAbove(BinPosi(T));
 	int stature(BinPosi(T) p) { return p ? p->height : -1; };
+	BinPosi(T)& fromParentTo(BinPosi(T) p);
 	/*±éÀú×Ó³ÌÐò*/
 	template <typename VST>
 	void visitAlongLBranch(BinPosi(T), VST&, MyStack<BinPosi(T)>&);
@@ -59,6 +60,13 @@ void MyBinTree<T>::updateHeightAbove(BinPosi(T) x) {
 		flag = (t != updateHeight(x));
 		x = x->parent;
 	}
+}
+
+template <typename T>
+BinPosi(T)& MyBinTree<T>::fromParentTo(BinPosi(T) p) {
+	if (!p->parent)return _root;
+	if (p == p->parent->lChild)return p->parent->lChild;
+	return p->parent->rChild;
 }
 
 
