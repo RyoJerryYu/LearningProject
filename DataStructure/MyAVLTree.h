@@ -28,7 +28,15 @@ BSTPosi(T) MyAVLTree<T>::insert(const MyEntry<T>&& t) {
 	BSTPosi(T) xx = x;
 	for (BSTPosi(T) g = x->parent; g; g = g->parent) {
 		if (!balanced(g)) {
-			MyBinTree<MyEntry<T> >::fromParentTo(g) = this->rotateAt(MyBinTree<MyEntry<T> >::tallerChild(MyBinTree<MyEntry<T> >::tallerChild(g)));
+			BSTPosi(T)& r = MyBinTree<MyEntry<T> >::fromParentTo(g);
+			/*
+			VS2017从右到左解释赋值
+			等号左边直接使用fromParentTo函数时
+			先执行rotateAt后执行fromParentTo
+			此时g的parent已被rotateAt修改
+			因此中间引用r不能省略
+			*/
+			r = this->rotateAt(MyBinTree<MyEntry<T> >::tallerChild(MyBinTree<MyEntry<T> >::tallerChild(g)));
 			break;
 		}
 		else {
@@ -46,7 +54,9 @@ bool MyAVLTree<T>::remove(const MyEntry<T>&& t) {
 	MyBinTree<MyEntry<T> >::_size--;
 	for (BSTPosi(T) g = this->_hot; g; g = g->parent) {
 		if (!balanced(g)) {
-			MyBinTree<MyEntry<T> >::fromParentTo(g) = this->rotateAt(MyBinTree<MyEntry<T> >::tallerChild(MyBinTree<MyEntry<T> >::tallerChild(g)));
+			BSTPosi(T)& r = MyBinTree<MyEntry<T> >::fromParentTo(g);
+			//'r' is the same use as explained in function insert.
+			r = this->rotateAt(MyBinTree<MyEntry<T> >::tallerChild(MyBinTree<MyEntry<T> >::tallerChild(g)));
 		}
 		MyBinTree<MyEntry<T> >::updateHeightAbove(g);
 	}

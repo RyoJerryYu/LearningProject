@@ -1,31 +1,3 @@
-# 未完成   
-
-# 已完成  
-## Vector：
-*  构造`~MyVector`与`MyVector`函数并测试
-*  `MyVector`类中重载`[]`运算符测试
-*  构造`expand`函数
-*  构造`size`和`get`函数
-*  构造`insert`函数
-*  重载运算符`=`、`<<`
-*  构造`disordered`函数
-*  构造`sort`函数
-*  构造`bubblesort`函数
-*  构造`remove`函数
-*  重新构造`insert`与`remove`
-*  构造`shrink()`
-*  构造`find()`，`deduplicate()`
-*  构造`operator>`,`<`,`>=`,`<=`,`==`,`!=`,`T*`
-*  构造`uniquify()`
-*  构造`search()`
-*  以迭代方法实现`mergesort()`
-*  以函数对象方式构造遍历接口`traverse()`
-*  更改了大小比较运算符与部分函数引用传值
-
-## List:
-*  完成`MyListNode`构造
-
-
 # 备忘项  
 ## Vector:
 *  完成`Vector.h`中备注的函数（已完成）
@@ -121,4 +93,12 @@
 *  指针声明时不能用逗号连续声明，`Posi(T) header,trailer`错误，因为`Posi(T)`声明一个指针，连续声明需为每个变量前带上`*`。
 
 ## Graph部分
-*  派生类成员函数使用基类`protected`数据成员的时候，要带上`this->`，否则提示`未声明的标识符`。原因未明。（请求帮助）
+*  派生类成员函数使用基类`protected`数据成员的时候，要带上`this->`，否则提示`未声明的标识符`。原因未明，可能是作用域问题。（请求帮助）
+
+## AVL部分
+*  insert与remove函数中，
+VS2017从右到左解释赋值，
+等号左边直接使用fromParentTo函数时，
+先执行rotateAt后执行fromParentTo，
+此时g的parent已被rotateAt修改，
+因此中间引用r不能省略

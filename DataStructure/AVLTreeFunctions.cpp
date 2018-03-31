@@ -9,10 +9,6 @@ int AVLTreeFunctions() {
 	cout << AVL1.size() << endl;
 	AVL1.insert(4);
 	AVL1.insert(2);
-	showPre_I2(AVL1);
-	showIn_I2(AVL1);
-	showPost_I2(AVL1);
-	showLevel_I1(AVL1);
 	AVL1.insert(9);
 	AVL1.insert(5);
 	AVL1.insert(6);
@@ -26,32 +22,29 @@ int AVLTreeFunctions() {
 	showPost_I2(AVL1);
 	showLevel_I1(AVL1);
 	/*
-	*    1
-	*   / \
-	*  0   7
-	*    /   \
-	*   4     9
-	*  / \    /
-	* 2  5   8
-	*  \  \
-	*   3  6
+	*        4
+	*     /     \
+	*    2       7
+	*   / \     /  \
+	*  1   3   5    9
+	*  /        \   /
+	* 0          6  8
 	*/
 	cout << "\nRemove" << endl;
-	AVL1.remove(1);
+	AVL1.remove(2);
 	showPre_I2(AVL1);
 	showIn_I2(AVL1);
 	showPost_I2(AVL1);
 	showLevel_I1(AVL1);
 	/*
-	*    2
-	*   / \
-	*  0   7
-	*    /   \
-	*   4     9
-	*  / \    /
-	* 3  5   8
-	*     \
-	*      6
+	*        4
+	*     /     \
+	*    1       7
+	*   / \     /  \
+	*  0   3   5    9
+	*           \   /
+	*            6  8
 	*/
+
 	return 0;
 }
