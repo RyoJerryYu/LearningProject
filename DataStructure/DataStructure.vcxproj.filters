@@ -39,6 +39,9 @@
     <ClCompile Include="BinSearchTreeFunctions.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="AVLTreeFunctions.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVector.h">

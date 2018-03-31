@@ -17,6 +17,7 @@ protected:
 	void updateHeightAbove(BinPosi(T));
 	int stature(BinPosi(T) p) { return p ? p->height : -1; };
 	BinPosi(T)& fromParentTo(BinPosi(T) p);
+	BinPosi(T)& tallerChild(BinPosi(T)& p);
 	/*遍历子程序*/
 	template <typename VST>
 	void visitAlongLBranch(BinPosi(T), VST&, MyStack<BinPosi(T)>&);
@@ -26,6 +27,7 @@ public:
 	MyBinTree(BinPosi(T)x = NULL) :_root(x) {};
 	int size() { return _size; };
 	bool empty() { return !_root; };
+	int height() { return stature(_root); }
 	BinPosi(T) root() { return _root; };
 
 	/*子树接入，删除和分离接口*/
@@ -67,6 +69,11 @@ BinPosi(T)& MyBinTree<T>::fromParentTo(BinPosi(T) p) {
 	if (!p->parent)return _root;
 	if (p == p->parent->lChild)return p->parent->lChild;
 	return p->parent->rChild;
+}
+
+template <typename T>
+BinPosi(T)& MyBinTree<T>::tallerChild(BinPosi(T)& p) {
+	return stature(p->rChild) > stature(p->lChild) ? p->rChild : p->lChild;
 }
 
 

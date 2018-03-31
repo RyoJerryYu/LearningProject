@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AVLTreeFunctions.cpp" />
     <ClCompile Include="BinSearchTreeFunctions.cpp" />
     <ClCompile Include="BinTreeFunctions.cpp" />
     <ClCompile Include="GraphFunctions.cpp" />

@@ -28,15 +28,34 @@ BSTPosi(T) MyAVLTree<T>::insert(const MyEntry<T>&& t) {
 	BSTPosi(T) xx = x;
 	for (BSTPosi(T) g = x->parent; g; g = g->parent) {
 		if (!balanced(g)) {
-			MyBinTree<MyEntry<T> >::fromParentTo(g)=this->rotateAt()
+			MyBinTree<MyEntry<T> >::fromParentTo(g) = this->rotateAt(MyBinTree<MyEntry<T> >::tallerChild(MyBinTree<MyEntry<T> >::tallerChild(g)));
+			break;
+		}
+		else {
+			MyBinTree<MyEntry<T> >::updateHeightAbove(g);
 		}
 	}
+	return xx;
 }
 
 template <typename T>
 bool MyAVLTree<T>::remove(const MyEntry<T>&& t) {
-
+	BSTPosi(T)& x = this->search(t);
+	if (!x)return false;
+	this->removeAt(x);
+	MyBinTree<MyEntry<T> >::_size--;
+	for (BSTPosi(T) g = this->_hot; g; g = g->parent) {
+		if (!balanced(g)) {
+			MyBinTree<MyEntry<T> >::fromParentTo(g) = this->rotateAt(MyBinTree<MyEntry<T> >::tallerChild(MyBinTree<MyEntry<T> >::tallerChild(g)));
+		}
+		MyBinTree<MyEntry<T> >::updateHeightAbove(g);
+	}
+	return true;
 }
+
+
+/*TestFunctions*/
+int AVLTreeFunctions();
 
 
 #endif //MY_AVL_TREE_H

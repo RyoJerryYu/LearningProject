@@ -6,6 +6,7 @@
 #include "MyBinTree.h"
 #include "MyGraph.h"
 #include "MyBST.h"
+#include "MyAVLTree.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ int main() {
 		cout << "5:Programs of binary tree" << endl;
 		cout << "6:Programs of graph" << endl;
 		cout << "7:Programs of binary search tree" << endl;
+		cout << "8:Programs of AVL tree" << endl;
 		cout << "If you input 0 or others, this program will be ended." << endl;
 		cin >> n;
 		cout << endl;
@@ -45,6 +47,9 @@ int main() {
 			break;
 		case 7:
 			BinSearchTreeFunctions();
+			break;
+		case 8:
+			AVLTreeFunctions();
 			break;
 		default:
 			cout << "Program end." << endl;

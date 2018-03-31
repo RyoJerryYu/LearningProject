@@ -16,14 +16,55 @@ public:
 protected:
 	BSTPosi(T) _hot;
 	BSTPosi(T) removeAt(BSTPosi(T)&);
-	BSTPosi(T) rotateAt(BSTPosi(T)&);
+	BSTPosi(T) rotateAt(BSTPosi(T));
 	BSTPosi(T) connet34(BSTPosi(T), BSTPosi(T), BSTPosi(T), BSTPosi(T), BSTPosi(T), BSTPosi(T), BSTPosi(T));
 };
 
 /*********protected********/
 template <typename T>
 BSTPosi(T) MyBST<T>::connet34(BSTPosi(T) a, BSTPosi(T) b, BSTPosi(T) c, BSTPosi(T) T0, BSTPosi(T) T1, BSTPosi(T) T2, BSTPosi(T) T3) {
-	
+	a->lChild = T0;
+	if (T0)T0->parent = a;
+	a->rChild = T1;
+	if (T1)T1->parent = a;
+	this->updateHeight(a);
+	c->lChild = T2;
+	if (T2)T2->parent = c;
+	c->rChild = T3;
+	if (T3)T3->parent = c;
+	this->updateHeight(c);
+	b->lChild = a;
+	b->rChild = c;
+	a->parent = b;
+	c->parent = b;
+	this->updateHeight(b);
+	return b;
+}
+
+template <typename T>
+BSTPosi(T) MyBST<T>::rotateAt(BSTPosi(T) v) {
+	BSTPosi(T) p = v->parent;
+	BSTPosi(T) g = p->parent;
+	if (p == g->lChild) {
+		if (v == p->lChild) {//zig-zig
+			p->parent = g->parent;
+			return connet34(v, p, g, v->lChild, v->rChild, p->rChild, g->rChild);
+		}
+		else {//zig-zag
+			v->parent = g->parent;
+			return connet34(p, v, g, p->lChild, v->lChild, v->rChild, g->rChild);
+		}
+	}
+	else {
+		if (v == p->lChild) {//zag-zig
+			v->parent = g->parent;
+			return connet34(g, v, p, g->lChild, v->lChild, v->rChild, p->rChild);
+		}
+		else {//zag-zag
+			p->parent = g->parent;
+			return connet34(g, p, v, g->lChild, p->lChild, v->lChild, v->rChild);
+		}
+	}
 }
 
 
